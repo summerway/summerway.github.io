@@ -504,205 +504,6 @@
   
   
   <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://summerway.github.io/2018/12/04/docker-composer + jenkins + gitlab/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="mapleSnow">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="http://markdown.zengtuo.net/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mapleSnow blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/12/04/docker-composer + jenkins + gitlab/" itemprop="url">docker-composer + jenkins + gitlab</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-12-04T08:45:14+08:00">
-                2018-12-04
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Practice/" itemprop="url" rel="index">
-                    <span itemprop="name">Practice</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/12/04/docker-composer + jenkins + gitlab/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/12/04/docker-composer + jenkins + gitlab/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  607
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br></pre></td><td class="code"><pre><span class="line"></span><br><span class="line"><span class="comment">######### install docker ##########</span></span><br><span class="line">sudo yum install -y yum-utils device-mapper-persistent-data lvm2</span><br><span class="line">sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo</span><br><span class="line">sudo yum-config-manager --<span class="built_in">enable</span> docker-ce-edge</span><br><span class="line">sudo yum-config-manager --<span class="built_in">enable</span> docker-ce-test</span><br><span class="line">sudo yum-config-manager --<span class="built_in">disable</span> docker-ce-edge</span><br><span class="line">sudo yum install docker-ce</span><br><span class="line"></span><br><span class="line">service start docker</span><br><span class="line"></span><br><span class="line"><span class="comment">######### install docker-compose ##########</span></span><br><span class="line">sudo curl -L <span class="string">"https://github.com/docker/compose/releases/download/1.23.1/docker-compose-<span class="variable">$(uname -s)</span>-<span class="variable">$(uname -m)</span>"</span> -o /usr/<span class="built_in">local</span>/bin/docker-compose</span><br><span class="line"></span><br><span class="line"><span class="comment">######### gitlab + jenkins ##########</span></span><br><span class="line">vi .env  <span class="comment">## edit GITLAB_HOST</span></span><br><span class="line">vi docker-compose.yml</span><br><span class="line"></span><br><span class="line">docker-compose build &amp;&amp; docker-compose up -d</span><br><span class="line"></span><br><span class="line"><span class="comment">######### ADL project migration #########</span></span><br><span class="line"><span class="comment"># sync 91ctf and f_xpro_adl branch</span></span><br><span class="line">yum install -y git</span><br><span class="line">git config user.name <span class="string">"maple"</span></span><br><span class="line">git config user.email <span class="string">"summerweiace@163.com"</span></span><br><span class="line">git remore add vpn ssh://git@192.168.1.187:10022/php/ADL.git</span><br><span class="line">git push vpn --mirror</span><br><span class="line"></span><br><span class="line"><span class="comment"># 配置git-ssh</span></span><br><span class="line"><span class="comment"># 上传本地开发的公钥 和 jenkins的公钥(需要进入jenkins容器内，以jenkins的用户生成)</span></span><br></pre></td></tr></table></figure>
-<p><a href="http://blog.51cto.com/12832314/2140304" target="_blank" rel="noopener">jeninks 配置</a><br><a href="http://blog.51cto.com/12832314/2140311" target="_blank" rel="noopener">自动化部署</a></p>
-<h1 id="jeninks配置"><a href="#jeninks配置" class="headerlink" title="jeninks配置"></a>jeninks配置</h1><h2 id="安装插件"><a href="#安装插件" class="headerlink" title="安装插件"></a>安装插件</h2><ul>
-<li>Build Authorization Token Root Plugin</li>
-<li>Git Parameter Plug-In</li>
-<li>Gitlab Authentication plugin</li>
-<li>Gitlab Hook Plugin</li>
-<li>GitLab Plugin</li>
-<li>Publish Over SSH<h2 id="系统配置"><a href="#系统配置" class="headerlink" title="系统配置"></a>系统配置</h2><img src="http://markdown.zengtuo.net/1544425626.png?imageMogr2/thumbnail/!70p" alt><br><img src="http://markdown.zengtuo.net/1544425768.png?imageMogr2/thumbnail/!70p" alt><br><img src="http://markdown.zengtuo.net/1544426113.png?imageMogr2/thumbnail/!70p" alt></li>
-</ul>
-<h2 id="项目配置"><a href="#项目配置" class="headerlink" title="项目配置"></a>项目配置</h2><p><img src="http://markdown.zengtuo.net/1544424542.png?imageMogr2/thumbnail/!70p" alt><br><img src="http://markdown.zengtuo.net/1544425446.png?imageMogr2/thumbnail/!70p" alt><br><img src="http://markdown.zengtuo.net/1544425500.png?imageMogr2/thumbnail/!70p" alt><br><img src="http://markdown.zengtuo.net/1544425533.png?imageMogr2/thumbnail/!70p" alt></p>
-<h1 id="issue"><a href="#issue" class="headerlink" title="issue"></a>issue</h1><ol>
-<li>No chain/target/match by that name.<br>重启docker服务</li>
-<li>ssh同步代码实效<br>开放10022端口<br>semanage port -l | grep ssh<br>semanage port -a -t ssh_port_t -p tcp 10022<br>semanage port -l | grep ssh<br>systemctl restart sshd.service</li>
-<li>jenkins 启动失败<br>docker logs </li>
-<li>Hook execution failed: execution expired<br>进入gitlab的容器，尝试curl hook url,若不行说明gitlab 访问不到jenkins<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 查看jenkins容器内部的ip</span></span><br><span class="line">docker inspect -f <span class="string">'&#123;&#123;.Name&#125;&#125; - &#123;&#123;range .NetworkSettings.Networks&#125;&#125;&#123;&#123;.IPAddress&#125;&#125;&#123;&#123;end&#125;&#125;'</span> $(docker ps -aq)  | grep jenkins</span><br></pre></td></tr></table></figure>
-</li>
-</ol>
-<p>Hook url: http://{$jenkins容器内部的ip}:{$jenkins容器内部的端口}/buildByToken/build?job={$job}&amp;token={$token}</p>
-<h1 id="附件"><a href="#附件" class="headerlink" title="附件"></a>附件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">#docker-compose.yml</span></span><br><span class="line">version: <span class="string">'2'</span></span><br><span class="line">services:</span><br><span class="line">  redis:</span><br><span class="line">    restart: always</span><br><span class="line">    image: sameersbn/redis:latest</span><br><span class="line">    container_name: gitlab-redis</span><br><span class="line">    <span class="built_in">command</span>:</span><br><span class="line">    - --loglevel warning</span><br><span class="line">    volumes:</span><br><span class="line">    - ./redis:/var/lib/redis:Z</span><br><span class="line"></span><br><span class="line">  <span class="comment"># Gitlab - GitLab is open source software to collaborate on code</span></span><br><span class="line">  postgresql:</span><br><span class="line">    restart: always</span><br><span class="line">    image: sameersbn/postgresql:9.6-2</span><br><span class="line">    container_name: gitlab-postgresql</span><br><span class="line">    ports:</span><br><span class="line">      - <span class="string">"5432:5432"</span></span><br><span class="line">    volumes:</span><br><span class="line">      - ./postgresql/data:/var/lib/postgresql:Z</span><br><span class="line">    environment:</span><br><span class="line">      - DB_USER=gitlab</span><br><span class="line">      - DB_PASS=password</span><br><span class="line">      - DB_NAME=gitlabhq_production</span><br><span class="line">      - DB_EXTENSION=pg_trgm</span><br><span class="line">  gitlab:</span><br><span class="line">    image: sameersbn/gitlab:10.3.3</span><br><span class="line">    container_name: gitlab</span><br><span class="line">    ports:</span><br><span class="line">      - <span class="string">"10080:80"</span></span><br><span class="line">      - <span class="string">"10022:22"</span></span><br><span class="line">    volumes:</span><br><span class="line">      - ./gitlab/data:/home/git/data:Z</span><br><span class="line">      - ./gitlab/logs:/var/<span class="built_in">log</span>/gitlab:Z</span><br><span class="line">    depends_on:</span><br><span class="line">      - redis</span><br><span class="line">      - postgresql</span><br><span class="line">    env_file: </span><br><span class="line">      - .env</span><br><span class="line">  jenkins:</span><br><span class="line">    restart: <span class="string">"no"</span></span><br><span class="line">    image: jenkins/jenkins:lts</span><br><span class="line">    container_name: jenkins</span><br><span class="line">    ports:</span><br><span class="line">      - <span class="string">"8888:8080"</span></span><br><span class="line">      - <span class="string">"50000:50000"</span></span><br><span class="line">    volumes:</span><br><span class="line">      - ./jenkins:/var/jenkins_home</span><br></pre></td></tr></table></figure>
-<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># .env</span></span><br><span class="line">DEBUG=<span class="literal">false</span></span><br><span class="line"></span><br><span class="line">DB_ADAPTER=postgresql</span><br><span class="line">DB_HOST=postgresql</span><br><span class="line">DB_PORT=5432</span><br><span class="line">DB_USER=gitlab</span><br><span class="line">DB_PASS=password</span><br><span class="line">DB_NAME=gitlabhq_production</span><br><span class="line"></span><br><span class="line">REDIS_HOST=redis</span><br><span class="line">REDIS_PORT=6379</span><br><span class="line"></span><br><span class="line">TZ=Asia/Shanghai</span><br><span class="line">GITLAB_TIMEZONE=Beijing</span><br><span class="line"></span><br><span class="line">GITLAB_HTTPS=<span class="literal">false</span></span><br><span class="line">SSL_SELF_SIGNED=<span class="literal">false</span></span><br><span class="line"></span><br><span class="line">GITLAB_HOST=localhost</span><br><span class="line">GITLAB_PORT=10080</span><br><span class="line">GITLAB_SSH_PORT=10022</span><br><span class="line">GITLAB_RELATIVE_URL_ROOT=</span><br><span class="line">GITLAB_SECRETS_DB_KEY_BASE=base64:wJrklh4TJAwSUIxOAPagkPWzQgLSoZ+lekE3ClUkfg0=</span><br><span class="line">GITLAB_SECRETS_SECRET_KEY_BASE=base64:vSHULhdG2YK7ZU33iepRHKmxYxbxxgNPCRQaotGG5YE=</span><br><span class="line">GITLAB_SECRETS_OTP_KEY_BASE=base64:dg2lVNcO84EtV+Cjy9wZIie9OSjQLR6hPqJqRp/E/e4=</span><br><span class="line"></span><br><span class="line">GITLAB_ROOT_PASSWORD=</span><br><span class="line">GITLAB_ROOT_EMAIL=</span><br><span class="line"></span><br><span class="line">GITLAB_NOTIFY_ON_BROKEN_BUILDS=<span class="literal">true</span></span><br><span class="line">GITLAB_NOTIFY_PUSHER=<span class="literal">false</span></span><br><span class="line"></span><br><span class="line">GITLAB_EMAIL=notifications@example.com</span><br><span class="line">GITLAB_EMAIL_REPLY_TO=noreply@example.com</span><br><span class="line">GITLAB_INCOMING_EMAIL_ADDRESS=reply@example.com</span><br><span class="line"></span><br><span class="line">GITLAB_BACKUP_SCHEDULE=daily</span><br><span class="line">GITLAB_BACKUP_TIME=01:00</span><br><span class="line"></span><br><span class="line">SMTP_ENABLED=<span class="literal">false</span></span><br><span class="line">SMTP_DOMAIN=www.example.com</span><br><span class="line">SMTP_HOST=smtp.gmail.com</span><br><span class="line">SMTP_PORT=587</span><br><span class="line">SMTP_USER=mailer@example.com</span><br><span class="line">SMTP_PASS=password</span><br><span class="line">SMTP_STARTTLS=<span class="literal">true</span></span><br><span class="line">SMTP_AUTHENTICATION=login</span><br><span class="line"></span><br><span class="line">IMAP_ENABLED=<span class="literal">false</span></span><br><span class="line">IMAP_HOST=imap.gmail.com</span><br><span class="line">IMAP_PORT=993</span><br><span class="line">IMAP_USER=mailer@example.com</span><br><span class="line">IMAP_PASS=password</span><br><span class="line">IMAP_SSL=<span class="literal">true</span></span><br><span class="line">IMAP_STARTTLS=<span class="literal">false</span></span><br><span class="line"></span><br><span class="line">OAUTH_ENABLED=<span class="literal">false</span></span><br><span class="line">OAUTH_AUTO_SIGN_IN_WITH_PROVIDER=</span><br><span class="line">OAUTH_ALLOW_SSO=</span><br><span class="line">OAUTH_BLOCK_AUTO_CREATED_USERS=<span class="literal">true</span></span><br><span class="line">OAUTH_AUTO_LINK_LDAP_USER=<span class="literal">false</span></span><br><span class="line">OAUTH_AUTO_LINK_SAML_USER=<span class="literal">false</span></span><br><span class="line">OAUTH_EXTERNAL_PROVIDERS=</span><br><span class="line"></span><br><span class="line">OAUTH_CAS3_LABEL=cas3</span><br><span class="line">OAUTH_CAS3_SERVER=</span><br><span class="line">OAUTH_CAS3_DISABLE_SSL_VERIFICATION=<span class="literal">false</span></span><br><span class="line">OAUTH_CAS3_LOGIN_URL=/cas/login</span><br><span class="line">OAUTH_CAS3_VALIDATE_URL=/cas/p3/serviceValidate</span><br><span class="line">OAUTH_CAS3_LOGOUT_URL=/cas/<span class="built_in">logout</span></span><br><span class="line"></span><br><span class="line">OAUTH_GOOGLE_API_KEY=</span><br><span class="line">OAUTH_GOOGLE_APP_SECRET=</span><br><span class="line">OAUTH_GOOGLE_RESTRICT_DOMAIN=</span><br><span class="line">OAUTH_FACEBOOK_API_KEY=</span><br><span class="line">OAUTH_FACEBOOK_APP_SECRET=</span><br><span class="line"></span><br><span class="line">OAUTH_TWITTER_API_KEY=</span><br><span class="line">OAUTH_TWITTER_APP_SECRET=</span><br><span class="line"></span><br><span class="line">OAUTH_GITHUB_API_KEY=</span><br><span class="line">OAUTH_GITHUB_APP_SECRET=</span><br><span class="line">OAUTH_GITHUB_URL=</span><br><span class="line">OAUTH_GITHUB_VERIFY_SSL=</span><br><span class="line"></span><br><span class="line">OAUTH_GITLAB_API_KEY=</span><br><span class="line">OAUTH_GITLAB_APP_SECRET=</span><br><span class="line"></span><br><span class="line">OAUTH_BITBUCKET_API_KEY=</span><br><span class="line">OAUTH_BITBUCKET_APP_SECRET=</span><br><span class="line"></span><br><span class="line">OAUTH_SAML_ASSERTION_CONSUMER_SERVICE_URL=</span><br><span class="line">OAUTH_SAML_IDP_CERT_FINGERPRINT=</span><br><span class="line">OAUTH_SAML_IDP_SSO_TARGET_URL=</span><br><span class="line">OAUTH_SAML_ISSUER=</span><br><span class="line">OAUTH_SAML_LABEL=<span class="string">"Our SAML Provider"</span></span><br><span class="line">OAUTH_SAML_NAME_IDENTIFIER_FORMAT=urn:oasis:names:tc:SAML:2.0:nameid-format:transient</span><br><span class="line">OAUTH_SAML_GROUPS_ATTRIBUTE=</span><br><span class="line">OAUTH_SAML_EXTERNAL_GROUPS=</span><br><span class="line">OAUTH_SAML_ATTRIBUTE_STATEMENTS_EMAIL=</span><br><span class="line">OAUTH_SAML_ATTRIBUTE_STATEMENTS_NAME=</span><br><span class="line">OAUTH_SAML_ATTRIBUTE_STATEMENTS_FIRST_NAME=</span><br><span class="line">OAUTH_SAML_ATTRIBUTE_STATEMENTS_LAST_NAME=</span><br><span class="line"></span><br><span class="line">OAUTH_CROWD_SERVER_URL=</span><br><span class="line">OAUTH_CROWD_APP_NAME=</span><br><span class="line">OAUTH_CROWD_APP_PASSWORD=</span><br><span class="line"></span><br><span class="line">OAUTH_AUTH0_CLIENT_ID=</span><br><span class="line">OAUTH_AUTH0_CLIENT_SECRET=</span><br><span class="line">OAUTH_AUTH0_DOMAIN=</span><br><span class="line"></span><br><span class="line">OAUTH_AZURE_API_KEY=</span><br><span class="line">OAUTH_AZURE_API_SECRET=</span><br><span class="line">OAUTH_AZURE_TENANT_ID=</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
     <link itemprop="mainEntityOfPage" href="https://summerway.github.io/2018/08/21/常用命令/">
 
     <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
@@ -1351,7 +1152,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">5</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -1443,7 +1244,7 @@
 <span class="post-meta-divider">|</span>
 <div class="theme-info">
   <div class="powered-by">
-    <i class="fa fa-pencil"></i> <span class="post-count">博客全站共2.7k字</span>
+    <i class="fa fa-pencil"></i> <span class="post-count">博客全站共2.1k字</span>
   </div>
   
 </div>
