@@ -15,6 +15,18 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[问题解决篇]]></title>
+    <url>%2F2018%2F09%2F28%2F%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E7%AF%87%2F</url>
+    <content type="text"><![CDATA[强制退出安装盘1diskutil unmountDisk force /Volumes/DISK_NAME Mac双屏显示时，如何将Dock自由切换 问题描述:mac外接扩展屏后，Dock可能一直固定在你不常操作的屏幕上解决方法:鼠标放在需要固定的屏幕底部悬停两秒，Dock就切换过去了 Chrome双击打开本地html文件 问题描述:双击打开本地的html文件，默认是用chrome打开，点击后能跳转到chrome应用，但文件无法打开。尝试使用safari或编辑器都能正常打开，将文件拖入chrome内，也可以正常打开。 解决方法: 打开Terminel 12345678# 进入目标目录$ cd to/path/# 查看html文件属性(能看到html被系统加了扩展属性，权限后面多了个@)$ ls -l | grep .html# 清除单个文件的扩展属性$ xattr -c &#123;filename&#125; # 清除一个目录下的所有文件的扩展属性$ xattr -rc &#123;diretory&#125; zip压缩加密 -q 表示不显示压缩进度状态-r 表示子目录子文件全部压缩为zip //这部比较重要，不然的话只有something这个文件夹被压缩，里面的没有被压缩进去-e 表示你的压缩文件需要加密，终端会提示你输入密码的// 还有种加密方法，这种是直接在命令行里做的，比如zip -r -P Password01! modudu.zip SomeDir, 就直接用Password01!来加密modudu.zip了。-m 表示压缩完删除原文件-o 表示设置所有被压缩文件的最后修改时间为当前压缩时间 1zip -e &#123;save.zip&#125; &#123;targetfile&#125; 更改Mac文件默认打开方式 问题描述: 在 OS X 中，Finder 存储的文件总会以指定的某个默认应用程序打开，比如图片类型的文件默认以「预览」打开。但如果需要用ps打开文件，每次都需要在打开方式下拉列表中选择ps。 更改同类型文件的默认打开方式 选中文件,用command + i显示简介 找到打开方式,选择指定的默认应用程序 点击全部更改，即可生效 更改某一个文件的默认打开方式 该方式仅适用于你所选择的这一个文件，并不适用于其他文件，包括同一类型的文件。 右键单击目标文件 按下 Option 键，你会看到「打开方式」选项变成了「始终以此方式打开」 选择「始终以此方式打开」列表内的某一个应用程序。 Mac读取中文不乱码 出现乱码的原因是文件的编码不是unicode编码，mac无法识别，需转化成utf-8,让系统能够识别～ 简单的方式用浏览器打开，因为浏览器可以自动识别编码 用sublime打开,sublime也能够识别编码,并可以转换编码，将文件编码从GBK转成utf-8就能用txt正常打开，preview也不会出现乱码。 spotlight 搜不到软件1234sudo mdutil -a -i off #Turn off spotlightsudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist #Unload itsudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist #Load Itsudo mdutil -a -i on #Turn on spotlight again 系统备份后自动关机12sudo -swhile ( ps -ef | grep 'backupd$' ); do echo "Still backing up..."; sleep 60; done; shutdown -h +1 下载软件报错App is damaged and can’t be opened 1sudo spctl --master-disable 重置 Mac 上的 NVRAM 或 PRAM将 Mac 关机，然后开机并立即同时按住以下四个按键：Option、Command、P 和 R。大约 20 秒后松开这些按键，在此期间 Mac 可能看似在重新启动。 iCloud相关系统偏好设置iCloud账号无法获取账号详情，提示验证密码 尝试断开网络重新连接 尝试重启系统 iCloud账号登出后无法登入本地同步iCloud云端的数据失败以上两种情况，请尝试重启系统，在重启时长按shift直到出现标志。这样会进入安全启动模式，可以排除第三方软件的影响。账号恢复正常后，请再正常重启系统。]]></content>
+      <categories>
+        <category>Mac</category>
+        <category>使用心得</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[常用命令]]></title>
     <url>%2F2018%2F08%2F21%2F%E5%B8%B8%E7%94%A8%E5%91%BD%E4%BB%A4%2F</url>
     <content type="text"><![CDATA[##常规 ###查看版本1select version(); 字符串截取12# 截取第一个字符到倒数第四的字符substring(&#123;$column&#125;,0,length(&#123;$column&#125;) - 4) ##账户管理 ###设置密码第一种直接命令设置1set password for &apos;root&apos;@&apos;localhost&apos;=password(&apos;newpasswd&apos;); 第二种修改user表1update mysql.user set password=password(&apos;newpasswd&apos;) where User=&quot;test&quot; and Host=&quot;localhost&quot;; 123update mysql.`user`set authentication_string = PASSWORD(&apos;shangelubon3446afe&apos;),password_expired = &apos;N&apos; where User = &apos;root&apos; and Host = &apos;localhost&apos;; ###添加新用户向user表中新添用户1insert into mysql.user(Host,User,Password) values(&quot;localhost&quot;,&quot;&#123;$username&#125;&quot;,password(&quot;&#123;$password&#125;&quot;)); ###删除用户同理删除user表的用户记录1delete from mysql.user where User=&apos;test&apos; and Host=&apos;localhost&apos;; ###用户授权授权用户拥有数据库的所有权限1grant all privileges on &#123;$dbname&#125;.* to &#123;$username&#125;@localhost identified by &apos;&#123;$password&#125;&apos;; 指定部分权限给用户1grant select,update on &#123;$dbname&#125;.* to &#123;$username&#125;@localhost identified by &apos;&#123;$password&#125;&apos;; grant select,update on reception.* to xpro@localhost identified by ‘yytest’;授权用户拥有所有数据库的某些权限12grant select,delete,update,create,drop on *.* to username@&quot;%&quot; identified by &quot;&#123;$password&#125;&quot;;# @&quot;%&quot; 表示对所有非本地主机授权，不包括localhost 以上授权操作都需要刷新系统权限表1flush privileges; ##常用工具（bin文件下常用命令） 数据导出1mysqldump -uroot -p123 dbname.table &gt; targetfile.sql mysql升级修复1mysql_upgrade 问题解决mysql配置文件修改为免密码登录。 vi /etc/my.cfgDisabling symbolic-links is recommended to prevent assorted security risksskip-grant-tables #添加这句话，这时候登入mysql就不需要密码symbolic-links=0 在mysql5.7版本中，不存在password字段，使用authentication_string字段. Reset mysql root password using Alter user 报错信息:ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement. 123use mysqlUPDATE mysql.user SET Password=PASSWORD(&apos;NewPassword&apos;) WHERE User=&apos;root&apos;;FLUSH PRIVILEGES;]]></content>
@@ -49,6 +61,19 @@
       <tags>
         <tag>git</tag>
         <tag>ssh</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[预览插件]]></title>
+    <url>%2F2018%2F05%2F02%2F%E9%A2%84%E8%A7%88%E6%8F%92%E4%BB%B6%2F</url>
+    <content type="text"><![CDATA[使用mac的朋友对于系统中的QuickLook 一定不会陌生，几乎操作系统的全部地方，对于图片的内容，你都可以选中它，然后按下空格来快速查看这张图片是什么,而不需要打开看图软件或者图片编辑器,或者是一些文本的文档以及其他视频和音频,这实在是太方便了。不过，QuickLook 也不是那么万能，比如说它只能支持苹果预置的几种常见格式:txt纯文本文档，mp4格式的视频，mp3格式的音频, jpeg 和 png 格式的图片等，一旦遇到点新颖的就不灵了，比如我常使用的markdown QuickLook 插件要装插件，先要安装homebrew。 可参考homebrew教程) 快速查看 Markdown 支持代码高亮 支持查看压缩文件 直接查看图片规格和大小 qlmarkdown qlmarkdown允许你直接在 QuickLook 里快速查看 Markdown 结果，十分方便。 QuickLook 快速查看 Markdown qlcolorcode qlcolorcode这款插件允许你在 QuickLook 中支持代码高亮！ QuickLook 支持代码高亮 以上两款插件我在使用，效果不错，还有其他的一些插件 betterzipql 这个其实是BetterZip 的插件，它允许你的 QuickLook 直接查看压缩包呢！如果你安装了 BetterZip，那你应该无需额外安装这款插件就能有这个功能了。 QuickLook 支持查看压缩文件 qlimagesize 它允许你在 QuickLook图片的同时，就可以查看图片的大小，包括体积和画幅 直接查看图片规格和大小 安装1brew cask install &#123;plugin&#125; 第一次进行安装的时候，brew cask会要求你的密码授权来为其自身目录修改读写权限，以后则不再需要]]></content>
+      <categories>
+        <category>Mac</category>
+        <category>使用心得</category>
+      </categories>
+      <tags>
+        <tag>mac</tag>
+        <tag>QuickLook</tag>
       </tags>
   </entry>
 </search>
