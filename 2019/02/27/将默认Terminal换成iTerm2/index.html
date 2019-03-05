@@ -94,19 +94,19 @@
 
 
 
-<meta name="description" content="感谢Stuart Ryan的脚本  iTerm 3.1.1 以上的脚本123456789101112131415161718192021222324252627282930313233343536373839404142434445-- This is v0.7 of the custom script for AlfredApp for iTerm 3.1.1+-- created by Sin">
+<meta name="description" content="感谢Stuart Ryan的脚本">
 <meta name="keywords" content="alfred,iTerm2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="将默认Terminal换成iTerm2">
 <meta property="og:url" content="https://summerway.github.io/2019/02/27/将默认Terminal换成iTerm2/index.html">
 <meta property="og:site_name" content="mapleSnow blog">
-<meta property="og:description" content="感谢Stuart Ryan的脚本  iTerm 3.1.1 以上的脚本123456789101112131415161718192021222324252627282930313233343536373839404142434445-- This is v0.7 of the custom script for AlfredApp for iTerm 3.1.1+-- created by Sin">
+<meta property="og:description" content="感谢Stuart Ryan的脚本">
 <meta property="og:locale" content="zh-Hans">
 <meta property="og:image" content="http://markdown.zengtuo.net/687474703a2f2f692e696d6775722e636f6d2f6e3356444f386c2e676966.gif?imageMogr2/thumbnail/!70p">
-<meta property="og:updated_time" content="2019-03-05T16:37:12.606Z">
+<meta property="og:updated_time" content="2019-03-05T16:40:58.339Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="将默认Terminal换成iTerm2">
-<meta name="twitter:description" content="感谢Stuart Ryan的脚本  iTerm 3.1.1 以上的脚本123456789101112131415161718192021222324252627282930313233343536373839404142434445-- This is v0.7 of the custom script for AlfredApp for iTerm 3.1.1+-- created by Sin">
+<meta name="twitter:description" content="感谢Stuart Ryan的脚本">
 <meta name="twitter:image" content="http://markdown.zengtuo.net/687474703a2f2f692e696d6775722e636f6d2f6e3356444f386c2e676966.gif?imageMogr2/thumbnail/!70p">
 
 
@@ -444,7 +444,7 @@
       
 
       
-        <p>感谢<a href="https://github.com/stuartcryan/custom-iterm-applescripts-for-alfred" target="_blank" rel="noopener">Stuart Ryan</a>的脚本</p>
+        <p>感谢<a href="https://github.com/stuartcryan/custom-iterm-applescripts-for-alfred" target="_blank" rel="noopener">Stuart Ryan</a>的脚本<br><a id="more"></a></p>
 <p><img src="http://markdown.zengtuo.net/687474703a2f2f692e696d6775722e636f6d2f6e3356444f386c2e676966.gif?imageMogr2/thumbnail/!70p" alt></p>
 <p>iTerm 3.1.1 以上的脚本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">-- This is v0.7 of the custom script <span class="keyword">for</span> AlfredApp <span class="keyword">for</span> iTerm 3.1.1+</span><br><span class="line">-- created by Sinan Eldem www.sinaneldem.com.tr</span><br><span class="line"></span><br><span class="line">on alfred_script(q)</span><br><span class="line">	<span class="keyword">if</span> application <span class="string">"iTerm2"</span> is running or application <span class="string">"iTerm"</span> is running <span class="keyword">then</span></span><br><span class="line">		run script <span class="string">"</span></span><br><span class="line"><span class="string">			on run &#123;q&#125;</span></span><br><span class="line"><span class="string">				tell application \"iTerm\"</span></span><br><span class="line"><span class="string">					activate</span></span><br><span class="line"><span class="string">					try</span></span><br><span class="line"><span class="string">						select first window</span></span><br><span class="line"><span class="string">						set onlywindow to true</span></span><br><span class="line"><span class="string">					on error</span></span><br><span class="line"><span class="string">						create window with default profile</span></span><br><span class="line"><span class="string">						select first window</span></span><br><span class="line"><span class="string">						set onlywindow to true</span></span><br><span class="line"><span class="string">					end try</span></span><br><span class="line"><span class="string">					tell the first window</span></span><br><span class="line"><span class="string">						if onlywindow is false then</span></span><br><span class="line"><span class="string">							create tab with default profile</span></span><br><span class="line"><span class="string">						end if</span></span><br><span class="line"><span class="string">						tell current session to write text q</span></span><br><span class="line"><span class="string">					end tell</span></span><br><span class="line"><span class="string">				end tell</span></span><br><span class="line"><span class="string">			end run</span></span><br><span class="line"><span class="string">		"</span> with parameters &#123;q&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		run script <span class="string">"</span></span><br><span class="line"><span class="string">			on run &#123;q&#125;</span></span><br><span class="line"><span class="string">				tell application \"iTerm\"</span></span><br><span class="line"><span class="string">					activate</span></span><br><span class="line"><span class="string">					try</span></span><br><span class="line"><span class="string">						select first window</span></span><br><span class="line"><span class="string">					on error</span></span><br><span class="line"><span class="string">						create window with default profile</span></span><br><span class="line"><span class="string">						select first window</span></span><br><span class="line"><span class="string">					end try</span></span><br><span class="line"><span class="string">					tell the first window</span></span><br><span class="line"><span class="string">						tell current session to write text q</span></span><br><span class="line"><span class="string">					end tell</span></span><br><span class="line"><span class="string">				end tell</span></span><br><span class="line"><span class="string">			end run</span></span><br><span class="line"><span class="string">		"</span> with parameters &#123;q&#125;</span><br><span class="line">	end <span class="keyword">if</span></span><br><span class="line">end alfred_script</span><br></pre></td></tr></table></figure></p>
 
@@ -497,8 +497,8 @@
         <div class="post-nav">
           <div class="post-nav-next post-nav-item">
             
-              <a href="/2018/08/21/常用命令/" rel="next" title="常用命令">
-                <i class="fa fa-chevron-left"></i> 常用命令
+              <a href="/2018/09/28/问题解决篇/" rel="next" title="问题解决篇">
+                <i class="fa fa-chevron-left"></i> 问题解决篇
               </a>
             
           </div>
@@ -600,7 +600,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -670,7 +670,7 @@
 <span class="post-meta-divider">|</span>
 <div class="theme-info">
   <div class="powered-by">
-    <i class="fa fa-pencil"></i> <span class="post-count">博客全站共2.5k字</span>
+    <i class="fa fa-pencil"></i> <span class="post-count">博客全站共3.1k字</span>
   </div>
   
 </div>

@@ -444,10 +444,248 @@
 
       
         
+          <p>感谢<a href="https://github.com/stuartcryan/custom-iterm-applescripts-for-alfred" target="_blank" rel="noopener">Stuart Ryan</a>的脚本<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2019/02/27/将默认Terminal换成iTerm2/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
+        
+      
+    </p></div>
+    
+    
+    
+    
+    <div>
+      
+    </div>
+
+    
+
+    
+
+    
+
+    <div>
+      
+    </div>
+
+    <footer class="post-footer">
+      
+
+      
+
+      
+
+      
+      
+        <div class="post-eof"></div>
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+    
+      
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://summerway.github.io/2018/09/28/问题解决篇/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mapleSnow">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://markdown.zengtuo.net/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="mapleSnow blog">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline">
+                
+                <a class="post-title-link" href="/2018/09/28/问题解决篇/" itemprop="url">问题解决篇</a></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-09-28T01:43:15+08:00">
+                2018-09-28
+              </time>
+            
+
+            
+
+            
+          </span>
+
           
-            <p>感谢<a href="https://github.com/stuartcryan/custom-iterm-applescripts-for-alfred" target="_blank" rel="noopener">Stuart Ryan</a>的脚本</p>
-<p><img src="http://markdown.zengtuo.net/687474703a2f2f692e696d6775722e636f6d2f6e3356444f386c2e676966.gif?imageMogr2/thumbnail/!70p" alt></p>
-<p>iTerm 3.1.1 以上的脚本<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line">-- This is v0.7 of the custom script <span class="keyword">for</span> AlfredApp <span class="keyword">for</span> iTerm 3.1.1+</span><br><span class="line">-- created by Sinan Eldem www.sinaneldem.com.tr</span><br><span class="line"></span><br><span class="line">on alfred_script(q)</span><br><span class="line">	<span class="keyword">if</span> application <span class="string">"iTerm2"</span> is running or application <span class="string">"iTerm"</span> is running <span class="keyword">then</span></span><br><span class="line">		run script <span class="string">"</span></span><br><span class="line"><span class="string">			on run &#123;q&#125;</span></span><br><span class="line"><span class="string">				tell application \"iTerm\"</span></span><br><span class="line"><span class="string">					activate</span></span><br><span class="line"><span class="string">					try</span></span><br><span class="line"><span class="string">						select first window</span></span><br><span class="line"><span class="string">						set onlywindow to true</span></span><br><span class="line"><span class="string">					on error</span></span><br><span class="line"><span class="string">						create window with default profile</span></span><br><span class="line"><span class="string">						select first window</span></span><br><span class="line"><span class="string">						set onlywindow to true</span></span><br><span class="line"><span class="string">					end try</span></span><br><span class="line"><span class="string">					tell the first window</span></span><br><span class="line"><span class="string">						if onlywindow is false then</span></span><br><span class="line"><span class="string">							create tab with default profile</span></span><br><span class="line"><span class="string">						end if</span></span><br><span class="line"><span class="string">						tell current session to write text q</span></span><br><span class="line"><span class="string">					end tell</span></span><br><span class="line"><span class="string">				end tell</span></span><br><span class="line"><span class="string">			end run</span></span><br><span class="line"><span class="string">		"</span> with parameters &#123;q&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">		run script <span class="string">"</span></span><br><span class="line"><span class="string">			on run &#123;q&#125;</span></span><br><span class="line"><span class="string">				tell application \"iTerm\"</span></span><br><span class="line"><span class="string">					activate</span></span><br><span class="line"><span class="string">					try</span></span><br><span class="line"><span class="string">						select first window</span></span><br><span class="line"><span class="string">					on error</span></span><br><span class="line"><span class="string">						create window with default profile</span></span><br><span class="line"><span class="string">						select first window</span></span><br><span class="line"><span class="string">					end try</span></span><br><span class="line"><span class="string">					tell the first window</span></span><br><span class="line"><span class="string">						tell current session to write text q</span></span><br><span class="line"><span class="string">					end tell</span></span><br><span class="line"><span class="string">				end tell</span></span><br><span class="line"><span class="string">			end run</span></span><br><span class="line"><span class="string">		"</span> with parameters &#123;q&#125;</span><br><span class="line">	end <span class="keyword">if</span></span><br><span class="line">end alfred_script</span><br></pre></td></tr></table></figure></p>
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mac/" itemprop="url" rel="index">
+                    <span itemprop="name">Mac</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Mac/使用心得/" itemprop="url" rel="index">
+                    <span itemprop="name">使用心得</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/09/28/问题解决篇/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/09/28/问题解决篇/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  1k
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        
+          
+            <a id="more"></a>
+<h1 id="强制退出安装盘"><a href="#强制退出安装盘" class="headerlink" title="强制退出安装盘"></a>强制退出安装盘</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">diskutil unmountDisk force /Volumes/DISK_NAME</span><br></pre></td></tr></table></figure>
+<h1 id="Mac双屏显示时，如何将Dock自由切换"><a href="#Mac双屏显示时，如何将Dock自由切换" class="headerlink" title="Mac双屏显示时，如何将Dock自由切换"></a>Mac双屏显示时，如何将Dock自由切换</h1><blockquote>
+<p>问题描述:mac外接扩展屏后，Dock可能一直固定在你不常操作的屏幕上<br>解决方法:鼠标放在需要固定的屏幕底部悬停两秒，Dock就切换过去了</p>
+</blockquote>
+<h1 id="Chrome双击打开本地html文件"><a href="#Chrome双击打开本地html文件" class="headerlink" title="Chrome双击打开本地html文件"></a>Chrome双击打开本地html文件</h1><blockquote>
+<p>问题描述:双击打开本地的html文件，默认是用chrome打开，点击后能跳转到chrome应用，但文件无法打开。尝试使用safari或编辑器都能正常打开，将文件拖入chrome内，也可以正常打开。</p>
+</blockquote>
+<p>解决方法: 打开<code>Terminel</code></p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 进入目标目录</span></span><br><span class="line">$ <span class="built_in">cd</span> to/path/</span><br><span class="line"><span class="comment"># 查看html文件属性(能看到html被系统加了扩展属性，权限后面多了个@)</span></span><br><span class="line">$ ls -l | grep .html</span><br><span class="line"><span class="comment"># 清除单个文件的扩展属性</span></span><br><span class="line">$ xattr -c &#123;filename&#125; </span><br><span class="line"><span class="comment"># 清除一个目录下的所有文件的扩展属性</span></span><br><span class="line">$ xattr -rc &#123;diretory&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="zip压缩加密"><a href="#zip压缩加密" class="headerlink" title="zip压缩加密"></a>zip压缩加密</h1><blockquote>
+<p>-q 表示不显示压缩进度状态<br>-r 表示子目录子文件全部压缩为zip  //这部比较重要，不然的话只有something这个文件夹被压缩，里面的没有被压缩进去<br>-e 表示你的压缩文件需要加密，终端会提示你输入密码的<br>// 还有种加密方法，这种是直接在命令行里做的，比如zip -r -P Password01! modudu.zip SomeDir, 就直接用Password01!来加密modudu.zip了。<br>-m 表示压缩完删除原文件<br>-o 表示设置所有被压缩文件的最后修改时间为当前压缩时间</p>
+</blockquote>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">zip -e &#123;save.zip&#125; &#123;targetfile&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="更改Mac文件默认打开方式"><a href="#更改Mac文件默认打开方式" class="headerlink" title="更改Mac文件默认打开方式"></a>更改Mac文件默认打开方式</h1><blockquote>
+<p>问题描述: 在 OS X 中，Finder 存储的文件总会以指定的某个默认应用程序打开，比如图片类型的文件默认以「预览」打开。但如果需要用ps打开文件，每次都需要在<code>打开方式</code>下拉列表中选择ps。</p>
+</blockquote>
+<h2 id="更改同类型文件的默认打开方式"><a href="#更改同类型文件的默认打开方式" class="headerlink" title="更改同类型文件的默认打开方式"></a>更改同类型文件的默认打开方式</h2><ol>
+<li>选中文件,用<code>command + i</code>显示简介</li>
+<li>找到<code>打开方式</code>,选择指定的默认应用程序</li>
+<li>点击<code>全部更改</code>，即可生效</li>
+</ol>
+<h2 id="更改某一个文件的默认打开方式"><a href="#更改某一个文件的默认打开方式" class="headerlink" title="更改某一个文件的默认打开方式"></a>更改某一个文件的默认打开方式</h2><blockquote>
+<p>该方式仅适用于你所选择的这一个文件，并不适用于其他文件，包括同一类型的文件。</p>
+</blockquote>
+<ol>
+<li>右键单击目标文件</li>
+<li>按下 Option 键，你会看到「打开方式」选项变成了「始终以此方式打开」</li>
+<li>选择「始终以此方式打开」列表内的某一个应用程序。</li>
+</ol>
+<h1 id="Mac读取中文不乱码"><a href="#Mac读取中文不乱码" class="headerlink" title="Mac读取中文不乱码"></a>Mac读取中文不乱码</h1><blockquote>
+<p>出现乱码的原因是文件的编码不是<code>unicode</code>编码，mac无法识别，需转化成<code>utf-8</code>,让系统能够识别～</p>
+<ul>
+<li>简单的方式用浏览器打开，因为浏览器可以自动识别编码</li>
+<li>用<code>sublime</code>打开,sublime也能够识别编码,并可以转换编码，将文件编码从<code>GBK</code>转成<code>utf-8</code>就能用txt正常打开，preview也不会出现乱码。<br>  <img src="http://markdown.zengtuo.net/1538099480.png?imageMogr2/thumbnail/!70p" alt></li>
+</ul>
+</blockquote>
+<h1 id="spotlight-搜不到软件"><a href="#spotlight-搜不到软件" class="headerlink" title="spotlight 搜不到软件"></a>spotlight 搜不到软件</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">sudo mdutil -a -i off <span class="comment">#Turn off spotlight</span></span><br><span class="line">sudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist <span class="comment">#Unload it</span></span><br><span class="line">sudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist <span class="comment">#Load It</span></span><br><span class="line">sudo mdutil -a -i on <span class="comment">#Turn on spotlight again</span></span><br></pre></td></tr></table></figure>
+<h1 id="系统备份后自动关机"><a href="#系统备份后自动关机" class="headerlink" title="系统备份后自动关机"></a>系统备份后自动关机</h1><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">sudo -s</span><br><span class="line"><span class="keyword">while</span> ( ps -ef | grep <span class="string">'backupd$'</span> ); <span class="keyword">do</span> <span class="built_in">echo</span> <span class="string">"Still backing up..."</span>; sleep 60; <span class="keyword">done</span>; shutdown -h +1</span><br></pre></td></tr></table></figure>
+<h1 id="下载软件报错"><a href="#下载软件报错" class="headerlink" title="下载软件报错"></a>下载软件报错</h1><p>App is damaged and can’t be opened</p>
+<figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">sudo spctl --master-disable</span><br></pre></td></tr></table></figure>
+<h1 id="重置-Mac-上的-NVRAM-或-PRAM"><a href="#重置-Mac-上的-NVRAM-或-PRAM" class="headerlink" title="重置 Mac 上的 NVRAM 或 PRAM"></a>重置 Mac 上的 NVRAM 或 PRAM</h1><p>将 Mac 关机，然后开机并立即同时按住以下四个按键：<code>Option</code>、<code>Command</code>、<code>P</code> 和 <code>R</code>。大约 20 秒后松开这些按键，在此期间 Mac 可能看似在重新启动。</p>
+<h1 id="iCloud相关"><a href="#iCloud相关" class="headerlink" title="iCloud相关"></a>iCloud相关</h1><h2 id="系统偏好设置iCloud账号无法获取账号详情，提示验证密码"><a href="#系统偏好设置iCloud账号无法获取账号详情，提示验证密码" class="headerlink" title="系统偏好设置iCloud账号无法获取账号详情，提示验证密码"></a>系统偏好设置iCloud账号无法获取账号详情，提示验证密码</h2><ol>
+<li>尝试断开网络重新连接</li>
+<li>尝试重启系统</li>
+</ol>
+<h2 id="iCloud账号登出后无法登入"><a href="#iCloud账号登出后无法登入" class="headerlink" title="iCloud账号登出后无法登入"></a>iCloud账号登出后无法登入</h2><h2 id="本地同步iCloud云端的数据失败"><a href="#本地同步iCloud云端的数据失败" class="headerlink" title="本地同步iCloud云端的数据失败"></a>本地同步iCloud云端的数据失败</h2><p>以上两种情况，请尝试重启系统，在重启时长按<code>shift</code>直到出现<strong></strong>标志。<br>这样会进入安全启动模式，可以排除第三方软件的影响。账号恢复正常后，请再正常重启系统。</p>
 
           
         
@@ -610,7 +848,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  466
+                  475
                 </span>
               
 
@@ -636,37 +874,17 @@
 
       
         
-          
-            <p>##常规</p>
-<p>###查看版本<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">select version();</span><br></pre></td></tr></table></figure></p>
-<h3 id="字符串截取"><a href="#字符串截取" class="headerlink" title="字符串截取"></a>字符串截取</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line"># 截取第一个字符到倒数第四的字符</span><br><span class="line">substring(&#123;$column&#125;,0,length(&#123;$column&#125;) - 4)</span><br></pre></td></tr></table></figure>
-<p>##账户管理</p>
-<p>###设置密码<br>第一种直接命令设置<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">set password for &apos;root&apos;@&apos;localhost&apos;=password(&apos;newpasswd&apos;);</span><br></pre></td></tr></table></figure></p>
-<p>第二种修改user表<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">update mysql.user set password=password(&apos;newpasswd&apos;) where User=&quot;test&quot; and Host=&quot;localhost&quot;;</span><br></pre></td></tr></table></figure></p>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">update mysql.`user`</span><br><span class="line">set authentication_string = PASSWORD(&apos;shangelubon3446afe&apos;),password_expired = &apos;N&apos; </span><br><span class="line">where User = &apos;root&apos; and Host = &apos;localhost&apos;;</span><br></pre></td></tr></table></figure>
-<p>###添加新用户<br>向user表中新添用户<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">insert into mysql.user(Host,User,Password) values(&quot;localhost&quot;,&quot;&#123;$username&#125;&quot;,password(&quot;&#123;$password&#125;&quot;));</span><br></pre></td></tr></table></figure></p>
-<p>###删除用户<br>同理删除user表的用户记录<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">delete from mysql.user where User=&apos;test&apos; and Host=&apos;localhost&apos;;</span><br></pre></td></tr></table></figure></p>
-<p>###用户授权<br>授权用户拥有数据库的所有权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant all privileges on &#123;$dbname&#125;.* to &#123;$username&#125;@localhost identified by &apos;&#123;$password&#125;&apos;;</span><br></pre></td></tr></table></figure></p>
-<p>指定部分权限给用户<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">grant select,update on &#123;$dbname&#125;.* to &#123;$username&#125;@localhost identified by &apos;&#123;$password&#125;&apos;;</span><br></pre></td></tr></table></figure></p>
-<p>grant select,update on reception.* to xpro@localhost identified by ‘yytest’;<br>授权用户拥有所有数据库的某些权限<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">grant select,delete,update,create,drop on *.* to username@&quot;%&quot; identified by &quot;&#123;$password&#125;&quot;;</span><br><span class="line"># @&quot;%&quot; 表示对所有非本地主机授权，不包括localhost</span><br></pre></td></tr></table></figure></p>
-<p><strong>以上授权操作都需要刷新系统权限表</strong><br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">flush privileges;</span><br></pre></td></tr></table></figure></p>
-<p>##常用工具（bin文件下常用命令）</p>
-<h3 id="数据导出"><a href="#数据导出" class="headerlink" title="数据导出"></a>数据导出</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysqldump -uroot -p123 dbname.table &gt; targetfile.sql</span><br></pre></td></tr></table></figure>
-<h3 id="mysql升级修复"><a href="#mysql升级修复" class="headerlink" title="mysql升级修复"></a>mysql升级修复</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">mysql_upgrade</span><br></pre></td></tr></table></figure>
-<h1 id="问题解决"><a href="#问题解决" class="headerlink" title="问题解决"></a>问题解决</h1><p>mysql配置文件修改为免密码登录。</p>
-<h1 id="vi-etc-my-cfg"><a href="#vi-etc-my-cfg" class="headerlink" title="vi /etc/my.cfg"></a>vi /etc/my.cfg</h1><h1 id="Disabling-symbolic-links-is-recommended-to-prevent-assorted-security-risks"><a href="#Disabling-symbolic-links-is-recommended-to-prevent-assorted-security-risks" class="headerlink" title="Disabling symbolic-links is recommended to prevent assorted security risks"></a>Disabling symbolic-links is recommended to prevent assorted security risks</h1><p>skip-grant-tables #添加这句话，这时候登入mysql就不需要密码<br>symbolic-links=0</p>
-<blockquote>
-<p>在mysql5.7版本中，不存在password字段，使用authentication_string字段.  </p>
-</blockquote>
-<h2 id="Reset-mysql-root-password-using-Alter-user"><a href="#Reset-mysql-root-password-using-Alter-user" class="headerlink" title="Reset mysql root password using Alter user"></a>Reset mysql root password using Alter user</h2><blockquote>
-<p>报错信息:ERROR 1820 (HY000): You must reset your password using ALTER USER statement before executing this statement.</p>
-</blockquote>
-<figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">use mysql</span><br><span class="line">UPDATE mysql.user SET Password=PASSWORD(&apos;NewPassword&apos;) WHERE User=&apos;root&apos;;</span><br><span class="line">FLUSH PRIVILEGES;</span><br></pre></td></tr></table></figure>
-
-          
+          <h2 id="前言"><a href="#前言" class="headerlink" title="前言"></a>前言</h2><p>Mysql开发常用命令<br>
+          <!--noindex-->
+          <div class="post-button text-center">
+            <a class="btn" href="/2018/08/21/常用命令/#more" rel="contents">
+              阅读全文 &raquo;
+            </a>
+          </div>
+          <!--/noindex-->
         
       
-    </div>
+    </p></div>
     
     
     
@@ -840,7 +1058,8 @@
       
         
           
-            <h2 id="Centos系统"><a href="#Centos系统" class="headerlink" title="Centos系统"></a>Centos系统</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev.sh</span><br><span class="line">chmod +x shadowsocks-libev.sh</span><br><span class="line">./shadowsocks-libev.sh 2&gt;&amp;1 | tee shadowsocks-libev.log</span><br></pre></td></tr></table></figure>
+            <a id="more"></a>
+<h2 id="Centos系统"><a href="#Centos系统" class="headerlink" title="Centos系统"></a>Centos系统</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev.sh</span><br><span class="line">chmod +x shadowsocks-libev.sh</span><br><span class="line">./shadowsocks-libev.sh 2&gt;&amp;1 | tee shadowsocks-libev.log</span><br></pre></td></tr></table></figure>
 <h2 id="Debian-Ubuntu-系统"><a href="#Debian-Ubuntu-系统" class="headerlink" title="Debian/Ubuntu 系统"></a>Debian/Ubuntu 系统</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">wget --no-check-certificate https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-libev-debian.sh</span><br><span class="line">chmod +x shadowsocks-libev-debian.sh</span><br><span class="line">./shadowsocks-libev-debian.sh 2&gt;&amp;1 | tee shadowsocks-libev-debian.log</span><br></pre></td></tr></table></figure>
 <h2 id="配置"><a href="#配置" class="headerlink" title="配置"></a>配置</h2><p>服务器端口：自己设定（如不设定，默认为 8989）<br>密码：自己设定（如不设定，默认为teddysun.com）<br>加密方式：自己设定（如不设定，默认为 aes-256-gcm）</p>
 <figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">Congratulations, Shadowsocks-libev server install completed!</span><br><span class="line">Your Server IP        :your_server_ip</span><br><span class="line">Your Server Port      :your_server_port</span><br><span class="line">Your Password         :your_password</span><br><span class="line">Your Encryption Method:your_encryption_method</span><br><span class="line"> </span><br><span class="line">Welcome to visit:http://teddysun.com/357.html</span><br><span class="line">Enjoy it!</span><br></pre></td></tr></table></figure>
@@ -1035,7 +1254,8 @@
       
         
           
-            <h1 id="SSH-Keys"><a href="#SSH-Keys" class="headerlink" title="SSH-Keys"></a>SSH-Keys</h1><h2 id="1-本地创建密钥"><a href="#1-本地创建密钥" class="headerlink" title="1. 本地创建密钥"></a>1. 本地创建密钥</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa  -C <span class="string">"<span class="variable">$(whoami)</span>@<span class="variable">$(hostname)</span>-<span class="variable">$(date)</span>"</span> -f  ~/.ssh/filename</span><br><span class="line">Generating public/private ecdsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/home/username/.ssh/id_rsa):</span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /home/username/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /home/username/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">dd:15:ee:24:20:14:11:01:b8:72:a2:0f:99:4c:79:7f username@localhost-2011-12-22</span><br><span class="line">The key<span class="string">'s randomart image is:</span></span><br><span class="line"><span class="string">+--[ECDSA  521]---+</span></span><br><span class="line"><span class="string">|     ..oB=.   .  |</span></span><br><span class="line"><span class="string">|    .    . . . . |</span></span><br><span class="line"><span class="string">|  .  .      . +  |</span></span><br><span class="line"><span class="string">| oo.o    . . =   |</span></span><br><span class="line"><span class="string">|o+.+.   S . . .  |</span></span><br><span class="line"><span class="string">|=.   . E         |</span></span><br><span class="line"><span class="string">| o    .          |</span></span><br><span class="line"><span class="string">|  .              |</span></span><br><span class="line"><span class="string">|                 |</span></span><br><span class="line"><span class="string">+-----------------+</span></span><br><span class="line"><span class="string">```  </span></span><br><span class="line"><span class="string">&gt; 终端执行上述命令,`-t`指定加密方式，默认为dsa,`-C` 设置注释文字，`-f`指定文件路径和文件名</span></span><br><span class="line"><span class="string">不需要密码，直接三个回车，则生成两个文件 : 默认生成`id_rsa`私钥和`id_rsa.pub`公钥,若出现`id_rsa already exists`，可以选择`overwrite`重写文件或，用`-f`参数指定文件名</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">### 不修改密钥对的情况下修改密码短语</span></span><br><span class="line"><span class="string">您可以使用 ssh-keygen 命令来修改密码短语，而无需改动密钥对。假设您要修改的密钥对使用 RSA 加密，输入以下命令即可：</span></span><br><span class="line"><span class="string">```bash</span></span><br><span class="line"><span class="string">$ ssh-keygen -f ~/.ssh/id_rsa -p</span></span><br></pre></td></tr></table></figure>
+            <a id="more"></a>
+<h1 id="SSH-Keys"><a href="#SSH-Keys" class="headerlink" title="SSH-Keys"></a>SSH-Keys</h1><h2 id="1-本地创建密钥"><a href="#1-本地创建密钥" class="headerlink" title="1. 本地创建密钥"></a>1. 本地创建密钥</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa  -C <span class="string">"<span class="variable">$(whoami)</span>@<span class="variable">$(hostname)</span>-<span class="variable">$(date)</span>"</span> -f  ~/.ssh/filename</span><br><span class="line">Generating public/private ecdsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/home/username/.ssh/id_rsa):</span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /home/username/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /home/username/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">dd:15:ee:24:20:14:11:01:b8:72:a2:0f:99:4c:79:7f username@localhost-2011-12-22</span><br><span class="line">The key<span class="string">'s randomart image is:</span></span><br><span class="line"><span class="string">+--[ECDSA  521]---+</span></span><br><span class="line"><span class="string">|     ..oB=.   .  |</span></span><br><span class="line"><span class="string">|    .    . . . . |</span></span><br><span class="line"><span class="string">|  .  .      . +  |</span></span><br><span class="line"><span class="string">| oo.o    . . =   |</span></span><br><span class="line"><span class="string">|o+.+.   S . . .  |</span></span><br><span class="line"><span class="string">|=.   . E         |</span></span><br><span class="line"><span class="string">| o    .          |</span></span><br><span class="line"><span class="string">|  .              |</span></span><br><span class="line"><span class="string">|                 |</span></span><br><span class="line"><span class="string">+-----------------+</span></span><br><span class="line"><span class="string">```  </span></span><br><span class="line"><span class="string">&gt; 终端执行上述命令,`-t`指定加密方式，默认为dsa,`-C` 设置注释文字，`-f`指定文件路径和文件名</span></span><br><span class="line"><span class="string">不需要密码，直接三个回车，则生成两个文件 : 默认生成`id_rsa`私钥和`id_rsa.pub`公钥,若出现`id_rsa already exists`，可以选择`overwrite`重写文件或，用`-f`参数指定文件名</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">### 不修改密钥对的情况下修改密码短语</span></span><br><span class="line"><span class="string">您可以使用 ssh-keygen 命令来修改密码短语，而无需改动密钥对。假设您要修改的密钥对使用 RSA 加密，输入以下命令即可：</span></span><br><span class="line"><span class="string">```bash</span></span><br><span class="line"><span class="string">$ ssh-keygen -f ~/.ssh/id_rsa -p</span></span><br></pre></td></tr></table></figure>
 <h2 id="2-管理多组密钥对"><a href="#2-管理多组密钥对" class="headerlink" title="2. 管理多组密钥对"></a>2. 管理多组密钥对</h2><p>配置<code>~/.ssh/config</code>文件添加ssh服务器信息,若有多个私钥，可以指明登陆某台服务器用哪个私钥<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.ssh/config   <span class="comment">#若没有该文件，直接新建即可</span></span><br></pre></td></tr></table></figure></p>
 <p>添加文件内容格式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host            host <span class="comment">#远程服务器域名或ip</span></span><br><span class="line">HostName        hostname <span class="comment">#设置别名</span></span><br><span class="line">Port            port <span class="comment">#远程服务器端口，默认为22</span></span><br><span class="line">User            user <span class="comment">#远程服务器用户名</span></span><br><span class="line">IdentityFile    ~/.ssh/id_rsa <span class="comment">#步骤一中生成的私钥文件</span></span><br></pre></td></tr></table></figure></p>
 <h2 id="将公钥复制到远程服务器上"><a href="#将公钥复制到远程服务器上" class="headerlink" title="将公钥复制到远程服务器上"></a>将公钥复制到远程服务器上</h2><p>创建好密钥对之后，需要将公钥上传到远程服务器上，以便用于 SSH 密钥认证登录。公钥文件名和私钥文件名相同，只不过公钥文件带有扩展名 .pub 而私钥文件名则没有。千万不要将私钥上传，私钥应该保存在本地。</p>
@@ -1061,229 +1281,6 @@
 <h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ul>
 <li><a href="https://wiki.archlinux.org/index.php/SSH_keys_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87" target="_blank" rel="noopener">SSH keys (简体中文) - ArchWiki</a>)</li>
 </ul>
-
-          
-        
-      
-    </div>
-    
-    
-    
-    
-    <div>
-      
-    </div>
-
-    
-
-    
-
-    
-
-    <div>
-      
-    </div>
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="https://summerway.github.io/2018/05/02/预览插件/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="mapleSnow">
-      <meta itemprop="description" content>
-      <meta itemprop="image" content="http://markdown.zengtuo.net/avatar.png">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="mapleSnow blog">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2018/05/02/预览插件/" itemprop="url">预览插件</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-02T01:43:06+08:00">
-                2018-05-02
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-            <span class="post-category">
-            
-              <span class="post-meta-divider">|</span>
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-folder-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">分类于</span>
-              
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mac/" itemprop="url" rel="index">
-                    <span itemprop="name">Mac</span>
-                  </a>
-                </span>
-
-                
-                
-                  ， 
-                
-              
-                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
-                  <a href="/categories/Mac/使用心得/" itemprop="url" rel="index">
-                    <span itemprop="name">使用心得</span>
-                  </a>
-                </span>
-
-                
-                
-              
-            </span>
-          
-
-          
-            
-              <span class="post-comments-count">
-                <span class="post-meta-divider">|</span>
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-comment-o"></i>
-                </span>
-                <a href="/2018/05/02/预览插件/#comments" itemprop="discussionUrl">
-                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/02/预览插件/" itemprop="commentCount"></span>
-                </a>
-              </span>
-            
-          
-
-          
-          
-
-          
-
-          
-            <div class="post-wordcount">
-              
-                
-                <span class="post-meta-item-icon">
-                  <i class="fa fa-file-word-o"></i>
-                </span>
-                
-                  <span class="post-meta-item-text">字数统计&#58;</span>
-                
-                <span title="字数统计">
-                  455
-                </span>
-              
-
-              
-
-              
-            </div>
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <blockquote>
-<p>使用mac的朋友对于系统中的QuickLook 一定不会陌生，几乎操作系统的全部地方，对于图片的内容，你都可以选中它，然后按下空格来快速查看这张图片是什么,而不需要打开看图软件或者图片编辑器,或者是一些文本的文档以及其他视频和音频,这实在是太方便了。<br>不过，QuickLook 也不是那么万能，比如说它只能支持苹果预置的几种常见格式:<code>txt</code>纯文本文档，<code>mp4</code>格式的视频，<code>mp3</code>格式的音频, <code>jpeg</code> 和 <code>png</code> 格式的图片等，一旦遇到点新颖的就不灵了，比如我常使用的<code>markdown</code></p>
-</blockquote>
-<h1 id="QuickLook-插件"><a href="#QuickLook-插件" class="headerlink" title="QuickLook 插件"></a>QuickLook 插件</h1><p>要装插件，先要安装<a href="https://brew.sh/" target="_blank" rel="noopener">homebrew</a>。 可参考<a href="[Homebrew使用心得](quiver-note-url/8B2A19F3-A27E-448F-BC63-0A8F3E4DE110">homebrew教程</a>)</p>
-<ul>
-<li><a href="#qlmarkdown">快速查看 Markdown</a></li>
-<li><a href="#qlcolorcode">支持代码高亮</a></li>
-<li><a href="#betterzipql">支持查看压缩文件</a></li>
-<li><a href="#qlimagesize">直接查看图片规格和大小</a></li>
-</ul>
-<h2 id="qlmarkdown">qlmarkdown</h2>
-
-<p><a href="https://github.com/toland/qlmarkdown" target="_blank" rel="noopener">qlmarkdown</a>允许你直接在 QuickLook 里快速查看 Markdown 结果，十分方便。</p>
-<p><img src="http://markdown.zengtuo.net/1488252172515_5.png?imageMogr2/thumbnail/!70p" alt></p>
-<p><em>QuickLook 快速查看 Markdown</em></p>
-<h2 id="qlcolorcode">qlcolorcode</h2>
-
-<p><a href="https://github.com/n8gray/QLColorCode" target="_blank" rel="noopener">qlcolorcode</a>这款插件允许你在 QuickLook 中支持代码高亮！</p>
-<p><img src="quiver-image-url/E4740E0AD009A7EE40295A4E56AF1AFC.png =816x317" alt="1488252079418_3.png"></p>
-<p><em>QuickLook 支持代码高亮</em></p>
-<hr>
-<p>以上两款插件我在使用，效果不错，还有其他的一些插件</p>
-<h2 id="betterzipql">betterzipql</h2>
-
-<p>这个其实是BetterZip 的插件，它允许你的 QuickLook 直接查看压缩包呢！<br>如果你安装了 BetterZip，那你应该无需额外安装这款插件就能有这个功能了。</p>
-<p><img src="http://markdown.zengtuo.net/1488252385837_6.png?imageMogr2/thumbnail/!70p" alt></p>
-<p><em>QuickLook 支持查看压缩文件</em></p>
-<h2 id="qlimagesize">qlimagesize</h2>
-
-<p>它允许你在 QuickLook图片的同时，就可以查看图片的大小，包括体积和画幅</p>
-<p><img src="http://markdown.zengtuo.net/1488253819303_7.png?imageMogr2/thumbnail/!70p" alt></p>
-<p><em>直接查看图片规格和大小</em></p>
-<h2 id="安装"><a href="#安装" class="headerlink" title="安装"></a>安装</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">brew cask install &#123;plugin&#125;</span><br></pre></td></tr></table></figure>
-<p>第一次进行安装的时候，<code>brew cask</code>会要求你的密码授权来为其自身目录修改读写权限，以后则不再需要</p>
 
           
         
@@ -1397,7 +1394,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -1467,7 +1464,7 @@
 <span class="post-meta-divider">|</span>
 <div class="theme-info">
   <div class="powered-by">
-    <i class="fa fa-pencil"></i> <span class="post-count">博客全站共2.5k字</span>
+    <i class="fa fa-pencil"></i> <span class="post-count">博客全站共3.1k字</span>
   </div>
   
 </div>
