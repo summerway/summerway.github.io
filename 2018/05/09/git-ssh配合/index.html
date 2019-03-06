@@ -94,18 +94,18 @@
 
 
 
-<meta name="description" content="SSH-Keys1. 本地创建密钥1234567891011121314151617181920212223242526272829ssh-keygen -t rsa  -C &quot;$(whoami)@$(hostname)-$(date)&quot; -f  ~/.ssh/filenameGenerating public/private ecdsa key pair.Enter file in which">
+<meta name="description" content="SSH 密钥对可以让您方便的登录到 SSH 服务器，而无需输入密码。由于您无需发送您的密码到网络中，SSH 密钥对被认为是更加安全的方式。再加上使用密码短语 (passphrase) 的使用，安全性会更上一层楼。">
 <meta name="keywords" content="git,ssh">
 <meta property="og:type" content="article">
 <meta property="og:title" content="git-ssh配合">
 <meta property="og:url" content="https://summerway.github.io/2018/05/09/git-ssh配合/index.html">
 <meta property="og:site_name" content="Indian Summer">
-<meta property="og:description" content="SSH-Keys1. 本地创建密钥1234567891011121314151617181920212223242526272829ssh-keygen -t rsa  -C &quot;$(whoami)@$(hostname)-$(date)&quot; -f  ~/.ssh/filenameGenerating public/private ecdsa key pair.Enter file in which">
+<meta property="og:description" content="SSH 密钥对可以让您方便的登录到 SSH 服务器，而无需输入密码。由于您无需发送您的密码到网络中，SSH 密钥对被认为是更加安全的方式。再加上使用密码短语 (passphrase) 的使用，安全性会更上一层楼。">
 <meta property="og:locale" content="zh-Hans">
-<meta property="og:updated_time" content="2019-03-06T10:19:00.487Z">
+<meta property="og:updated_time" content="2019-03-06T16:57:11.177Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="git-ssh配合">
-<meta name="twitter:description" content="SSH-Keys1. 本地创建密钥1234567891011121314151617181920212223242526272829ssh-keygen -t rsa  -C &quot;$(whoami)@$(hostname)-$(date)&quot; -f  ~/.ssh/filenameGenerating public/private ecdsa key pair.Enter file in which">
+<meta name="twitter:description" content="SSH 密钥对可以让您方便的登录到 SSH 服务器，而无需输入密码。由于您无需发送您的密码到网络中，SSH 密钥对被认为是更加安全的方式。再加上使用密码短语 (passphrase) 的使用，安全性会更上一层楼。">
 
 
 
@@ -331,7 +331,7 @@
               
                 <span class="post-meta-item-text">发表于</span>
               
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-09T02:52:22+08:00">
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-09T04:52:22+08:00">
                 2018-05-09
               </time>
             
@@ -406,7 +406,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  1.2k
+                  1.3k
                 </span>
               
 
@@ -431,7 +431,10 @@
       
 
       
-        <a id="more"></a>
+        <blockquote>
+<p>SSH 密钥对可以让您方便的登录到 SSH 服务器，而无需输入密码。由于您无需发送您的密码到网络中，SSH 密钥对被认为是更加安全的方式。再加上使用密码短语 (passphrase) 的使用，安全性会更上一层楼。</p>
+</blockquote>
+<a id="more"></a>
 <h1 id="SSH-Keys"><a href="#SSH-Keys" class="headerlink" title="SSH-Keys"></a>SSH-Keys</h1><h2 id="1-本地创建密钥"><a href="#1-本地创建密钥" class="headerlink" title="1. 本地创建密钥"></a>1. 本地创建密钥</h2><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br></pre></td><td class="code"><pre><span class="line">ssh-keygen -t rsa  -C <span class="string">"<span class="variable">$(whoami)</span>@<span class="variable">$(hostname)</span>-<span class="variable">$(date)</span>"</span> -f  ~/.ssh/filename</span><br><span class="line">Generating public/private ecdsa key pair.</span><br><span class="line">Enter file <span class="keyword">in</span> <span class="built_in">which</span> to save the key (/home/username/.ssh/id_rsa):</span><br><span class="line">Enter passphrase (empty <span class="keyword">for</span> no passphrase):</span><br><span class="line">Enter same passphrase again:</span><br><span class="line">Your identification has been saved <span class="keyword">in</span> /home/username/.ssh/id_rsa.</span><br><span class="line">Your public key has been saved <span class="keyword">in</span> /home/username/.ssh/id_rsa.pub.</span><br><span class="line">The key fingerprint is:</span><br><span class="line">dd:15:ee:24:20:14:11:01:b8:72:a2:0f:99:4c:79:7f username@localhost-2011-12-22</span><br><span class="line">The key<span class="string">'s randomart image is:</span></span><br><span class="line"><span class="string">+--[ECDSA  521]---+</span></span><br><span class="line"><span class="string">|     ..oB=.   .  |</span></span><br><span class="line"><span class="string">|    .    . . . . |</span></span><br><span class="line"><span class="string">|  .  .      . +  |</span></span><br><span class="line"><span class="string">| oo.o    . . =   |</span></span><br><span class="line"><span class="string">|o+.+.   S . . .  |</span></span><br><span class="line"><span class="string">|=.   . E         |</span></span><br><span class="line"><span class="string">| o    .          |</span></span><br><span class="line"><span class="string">|  .              |</span></span><br><span class="line"><span class="string">|                 |</span></span><br><span class="line"><span class="string">+-----------------+</span></span><br><span class="line"><span class="string">```  </span></span><br><span class="line"><span class="string">&gt; 终端执行上述命令,`-t`指定加密方式，默认为dsa,`-C` 设置注释文字，`-f`指定文件路径和文件名</span></span><br><span class="line"><span class="string">不需要密码，直接三个回车，则生成两个文件 : 默认生成`id_rsa`私钥和`id_rsa.pub`公钥,若出现`id_rsa already exists`，可以选择`overwrite`重写文件或，用`-f`参数指定文件名</span></span><br><span class="line"><span class="string"></span></span><br><span class="line"><span class="string">### 不修改密钥对的情况下修改密码短语</span></span><br><span class="line"><span class="string">您可以使用 ssh-keygen 命令来修改密码短语，而无需改动密钥对。假设您要修改的密钥对使用 RSA 加密，输入以下命令即可：</span></span><br><span class="line"><span class="string">```bash</span></span><br><span class="line"><span class="string">$ ssh-keygen -f ~/.ssh/id_rsa -p</span></span><br></pre></td></tr></table></figure>
 <h2 id="2-管理多组密钥对"><a href="#2-管理多组密钥对" class="headerlink" title="2. 管理多组密钥对"></a>2. 管理多组密钥对</h2><p>配置<code>~/.ssh/config</code>文件添加ssh服务器信息,若有多个私钥，可以指明登陆某台服务器用哪个私钥<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">vi ~/.ssh/config   <span class="comment">#若没有该文件，直接新建即可</span></span><br></pre></td></tr></table></figure></p>
 <p>添加文件内容格式如下：<br><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br></pre></td><td class="code"><pre><span class="line">Host            host <span class="comment">#远程服务器域名或ip</span></span><br><span class="line">HostName        hostname <span class="comment">#设置别名</span></span><br><span class="line">Port            port <span class="comment">#远程服务器端口，默认为22</span></span><br><span class="line">User            user <span class="comment">#远程服务器用户名</span></span><br><span class="line">IdentityFile    ~/.ssh/id_rsa <span class="comment">#步骤一中生成的私钥文件</span></span><br></pre></td></tr></table></figure></p>
@@ -514,8 +517,8 @@
 
           <div class="post-nav-prev post-nav-item">
             
-              <a href="/2018/08/19/linux 下搭建SS服务器/" rel="prev" title="linux 下搭建SS服务器">
-                linux 下搭建SS服务器 <i class="fa fa-chevron-right"></i>
+              <a href="/2019/02/20/维护页面配置/" rel="prev" title="维护页面配置">
+                维护页面配置 <i class="fa fa-chevron-right"></i>
               </a>
             
           </div>
@@ -598,7 +601,7 @@
               
                 <a href="/archives/">
               
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">2</span>
                   <span class="site-state-item-name">日志</span>
                 </a>
               </div>
@@ -609,7 +612,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">9</span>
+                  <span class="site-state-item-count">3</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -620,7 +623,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">8</span>
+                  <span class="site-state-item-count">4</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -706,7 +709,7 @@
 <span class="post-meta-divider">|</span>
 <div class="theme-info">
   <div class="powered-by">
-    <i class="fa fa-pencil"></i> <span class="post-count">博客全站共3.4k字</span>
+    <i class="fa fa-pencil"></i> <span class="post-count">博客全站共1.5k字</span>
   </div>
   
 </div>
