@@ -1832,7 +1832,7 @@ pre .javascript .function {
   width: 4px;
   height: 4px;
   border-radius: 50%;
-  background: #583854;
+  background: #aae4ff;
 }
 .links-of-blogroll {
   font-size: 13px;
@@ -2949,4 +2949,14 @@ pre {
 .sidebar-nav .sidebar-nav-active {
   color: #fb9245;
   border-bottom-color: #fb9245;
+}
+.site-meta .site-title {
+  font-size: 24px;
+  -webkit-transform: rotate(-6deg);
+  -moz-transform: rotate(-6deg);
+  -ms-transform: rotate(-6deg);
+  -o-transform: rotate(-6deg);
+  transform: rotate(-6deg);
+  font-family: 'Brush Script MT';
+  text-shadow: 5px 5px 5px #fb9245;
 }

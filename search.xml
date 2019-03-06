@@ -15,6 +15,17 @@
       </tags>
   </entry>
   <entry>
+    <title><![CDATA[俄罗斯双首都行程]]></title>
+    <url>%2F2019%2F01%2F06%2F%E4%BF%84%E7%BD%97%E6%96%AF%E5%8F%8C%E9%A6%96%E9%83%BD%E8%A1%8C%E7%A8%8B%2F</url>
+    <content type="text"><![CDATA[1.30 周三 杭州 -&gt; 圣彼得堡航班海南航空HU727812:35 萧山国际机场 -&gt; 14:50 首都国际机场 2h15m 海南航空HU796516:55 首都国际机场T2(PEK) -&gt; 20:15 普尔科夫机场 8h20m 接机：酒店圣彼得堡利格夫斯基皇冠假日酒店(Crowne Plaza St. Petersburg-Ligovsky) 1.31 周四 圣彼得堡景点冬宫 Winter Palace周四开放时间: 10:30-18:00 王宫广场 Palace Square滴血大教堂 Church of the savior on Spilled blood餐饮酒店圣彼得堡利格夫斯基皇冠假日酒店(Crowne Plaza St. Petersburg-Ligovsky) 2.1 周五 圣彼得堡景点夏宫Peterhof PalaceCatherine PalaceCatherine Park (optional)冬宫桥(Palace Bridge)酒店圣彼得堡利格夫斯基皇冠假日酒店(Crowne Plaza St. Petersburg-Ligovsky) 2.02 周六 圣彼得堡 -&gt; 莫斯科俄罗斯胜利航空DP20820:50 普尔科夫机场(LED) -&gt; 22:10 伏努科沃机场 1h20m 2.03 周日 莫斯科景点红场(Red Square)克里姆林宫(The Moscow Kremlin)### 2.04 周一 莫斯科]]></content>
+      <categories>
+        <category>Travels</category>
+      </categories>
+      <tags>
+        <tag>Russia</tag>
+      </tags>
+  </entry>
+  <entry>
     <title><![CDATA[问题解决篇]]></title>
     <url>%2F2018%2F09%2F28%2F%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3%E7%AF%87%2F</url>
     <content type="text"><![CDATA[强制退出安装盘1diskutil unmountDisk force /Volumes/DISK_NAME Mac双屏显示时，如何将Dock自由切换 问题描述:mac外接扩展屏后，Dock可能一直固定在你不常操作的屏幕上解决方法:鼠标放在需要固定的屏幕底部悬停两秒，Dock就切换过去了 Chrome双击打开本地html文件 问题描述:双击打开本地的html文件，默认是用chrome打开，点击后能跳转到chrome应用，但文件无法打开。尝试使用safari或编辑器都能正常打开，将文件拖入chrome内，也可以正常打开。 解决方法: 打开Terminel 12345678# 进入目标目录$ cd to/path/# 查看html文件属性(能看到html被系统加了扩展属性，权限后面多了个@)$ ls -l | grep .html# 清除单个文件的扩展属性$ xattr -c &#123;filename&#125; # 清除一个目录下的所有文件的扩展属性$ xattr -rc &#123;diretory&#125; zip压缩加密 -q 表示不显示压缩进度状态-r 表示子目录子文件全部压缩为zip //这部比较重要，不然的话只有something这个文件夹被压缩，里面的没有被压缩进去-e 表示你的压缩文件需要加密，终端会提示你输入密码的// 还有种加密方法，这种是直接在命令行里做的，比如zip -r -P Password01! modudu.zip SomeDir, 就直接用Password01!来加密modudu.zip了。-m 表示压缩完删除原文件-o 表示设置所有被压缩文件的最后修改时间为当前压缩时间 1zip -e &#123;save.zip&#125; &#123;targetfile&#125; 更改Mac文件默认打开方式 问题描述: 在 OS X 中，Finder 存储的文件总会以指定的某个默认应用程序打开，比如图片类型的文件默认以「预览」打开。但如果需要用ps打开文件，每次都需要在打开方式下拉列表中选择ps。 更改同类型文件的默认打开方式 选中文件,用command + i显示简介 找到打开方式,选择指定的默认应用程序 点击全部更改，即可生效 更改某一个文件的默认打开方式 该方式仅适用于你所选择的这一个文件，并不适用于其他文件，包括同一类型的文件。 右键单击目标文件 按下 Option 键，你会看到「打开方式」选项变成了「始终以此方式打开」 选择「始终以此方式打开」列表内的某一个应用程序。 Mac读取中文不乱码 出现乱码的原因是文件的编码不是unicode编码，mac无法识别，需转化成utf-8,让系统能够识别～ 简单的方式用浏览器打开，因为浏览器可以自动识别编码 用sublime打开,sublime也能够识别编码,并可以转换编码，将文件编码从GBK转成utf-8就能用txt正常打开，preview也不会出现乱码。 spotlight 搜不到软件1234sudo mdutil -a -i off #Turn off spotlightsudo launchctl unload -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist #Unload itsudo launchctl load -w /System/Library/LaunchDaemons/com.apple.metadata.mds.plist #Load Itsudo mdutil -a -i on #Turn on spotlight again 系统备份后自动关机12sudo -swhile ( ps -ef | grep 'backupd$' ); do echo "Still backing up..."; sleep 60; done; shutdown -h +1 下载软件报错App is damaged and can’t be opened 1sudo spctl --master-disable 重置 Mac 上的 NVRAM 或 PRAM将 Mac 关机，然后开机并立即同时按住以下四个按键：Option、Command、P 和 R。大约 20 秒后松开这些按键，在此期间 Mac 可能看似在重新启动。 iCloud相关系统偏好设置iCloud账号无法获取账号详情，提示验证密码 尝试断开网络重新连接 尝试重启系统 iCloud账号登出后无法登入本地同步iCloud云端的数据失败以上两种情况，请尝试重启系统，在重启时长按shift直到出现标志。这样会进入安全启动模式，可以排除第三方软件的影响。账号恢复正常后，请再正常重启系统。]]></content>
