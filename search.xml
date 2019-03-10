@@ -25,17 +25,4 @@
         <tag>docker</tag>
       </tags>
   </entry>
-  <entry>
-    <title><![CDATA[Git工作流]]></title>
-    <url>%2F2018%2F05%2F03%2FGit%E5%B7%A5%E4%BD%9C%E6%B5%81%2F</url>
-    <content type="text"><![CDATA[GitFlow是Vincent Driessen提出的A Successful Git Branching Model流程图翻译如下 #分支介绍主要分支:永久分支,生命周期与项目同步 master:永远处在production-ready状态,保存已发布的版本 develop:当前最新的工作状态 辅助分支: 临时性分支 feature:开发新功能或较大的功能改动，一般基于develop分支，完成后merge回develop分支 realease:准备发布版本，只完善当前版本，不加新功能。基于develop分支，完成后merge回develop和master(标记tag) hotfix:有紧急bug需修复上线，赶不及下次release。基于最新master，完成后merge回develop和master(标记) #分支图解 ##初始分支所有在master分支上的commit 应该tag ##feature分支分支命名为feature/*,feature分支完成后，必须合并回develop, 合并完分支后一般会删点这个Feature分支，但是我们也可以保留 ##release分支分支命名为release/*,release分支基于develop分支创建，创建release分支后，可以进行测试，修改bug等。同时，其它开发人员可以基于开发新的Feature ##hotfix分支名hotfix/*,修复线上出现的紧急bug #Git Flow代码示例 创建develop12git branch developgit push -u origin develop 开始新feature开发12345678git checkout -b some-feature develop# Optionally, push branch to origin:git push -u origin some-feature # 做一些改动 git statusgit add some-filegit commit 完成feature123456789git pull origin developgit checkout developgit merge --no-ff some-featuregit push origin developgit branch -d some-feature# If you pushed branch to origin:git push origin --delete some-feature 开始relase1234git checkout -b release-0.1.0 develop# Optional: Bump version number, commit# Prepare release, commit 完成release123456789101112131415git checkout mastergit merge --no-ff release-0.1.0git pushgit checkout developgit merge --no-ff release-0.1.0git pushgit branch -d release-0.1.0# If you pushed branch to origin:git push origin --delete release-0.1.0 git tag -a v0.1.0 mastergit push --tags 开始hotfix1git checkout -b hotfix-0.1.1 master 完成hotfix123456789101112git checkout mastergit merge --no-ff hotfix-0.1.1git pushgit checkout developgit merge --no-ff hotfix-0.1.1git pushgit branch -d hotfix-0.1.1git tag -a v0.1.1 mastergit push --tags]]></content>
-      <categories>
-        <category>Coding</category>
-        <category>Git</category>
-      </categories>
-      <tags>
-        <tag>git</tag>
-        <tag>gitFlow</tag>
-      </tags>
-  </entry>
 </search>
