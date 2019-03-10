@@ -83,7 +83,7 @@
 
 
 
-  <meta name="keywords" content="Hexo, NexT">
+  <meta name="keywords" content="git,gitFlow,">
 
 
 
@@ -94,16 +94,24 @@
 
 
 
-<meta name="description" content="The thankful receiver bears a plentful harvest.">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Indian Summer">
-<meta property="og:url" content="https://summerway.github.io/categories/Mac/软件/PhpStorm/index.html">
+<meta name="description" content="GitFlow是Vincent Driessen提出的A Successful Git Branching Model流程图翻译如下">
+<meta name="keywords" content="git,gitFlow">
+<meta property="og:type" content="article">
+<meta property="og:title" content="Git工作流">
+<meta property="og:url" content="https://summerway.github.io/2018/05/03/Git工作流/index.html">
 <meta property="og:site_name" content="Indian Summer">
-<meta property="og:description" content="The thankful receiver bears a plentful harvest.">
+<meta property="og:description" content="GitFlow是Vincent Driessen提出的A Successful Git Branching Model流程图翻译如下">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://markdown.zengtuo.net/1460782827245_7.png?imageMogr2/thumbnail/!70p">
+<meta property="og:image" content="http://markdown.zengtuo.net/1460782826567_4.png?imageMogr2/thumbnail/!70p">
+<meta property="og:image" content="http://markdown.zengtuo.net/1460782826570_6.png?imageMogr2/thumbnail/!70p">
+<meta property="og:image" content="http://markdown.zengtuo.net/1460782826565_3.png?imageMogr2/thumbnail/!70p">
+<meta property="og:image" content="https://summerway.github.io/2018/05/03/Git工作流/quiver-image-url/FA159868DF4A416D391C6FD832851F9A.png%20=368x228">
+<meta property="og:updated_time" content="2019-03-10T02:54:02.943Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Indian Summer">
-<meta name="twitter:description" content="The thankful receiver bears a plentful harvest.">
+<meta name="twitter:title" content="Git工作流">
+<meta name="twitter:description" content="GitFlow是Vincent Driessen提出的A Successful Git Branching Model流程图翻译如下">
+<meta name="twitter:image" content="http://markdown.zengtuo.net/1460782827245_7.png?imageMogr2/thumbnail/!70p">
 
 
 
@@ -133,13 +141,13 @@
 
 
 
-  <link rel="canonical" href="https://summerway.github.io/categories/Mac/软件/PhpStorm/">
+  <link rel="canonical" href="https://summerway.github.io/2018/05/03/Git工作流/">
 
 
 
 
 
-  <title>分类: PhpStorm | Indian Summer</title>
+  <title>Git工作流 | Indian Summer</title>
   
 
 
@@ -158,7 +166,7 @@
     
   
 
-  <div class="container sidebar-position-left ">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
     <!-- github角标 -->
     <a href="https://github.com/summerway" class="github-corner" aria-label="View source on GitHub"><svg width="80" height="80" viewbox="0 0 250 250" style="fill:#151513; color:#FB9245; position: absolute; top: 0; border: 0; right: 0;" aria-hidden="true"><path d="M0,0 L115,115 L130,115 L142,142 L250,250 L250,0 Z"/><path d="M128.3,109.0 C113.8,99.7 119.0,89.6 119.0,89.6 C122.0,82.7 120.5,78.6 120.5,78.6 C119.2,72.0 123.4,76.3 123.4,76.3 C127.3,80.9 125.5,87.3 125.5,87.3 C122.9,97.6 130.6,101.9 134.4,103.2" fill="currentColor" style="transform-origin: 130px 106px;" class="octo-arm"/><path d="M115.0,115.0 C114.9,115.1 118.7,116.5 119.8,115.4 L133.7,101.6 C136.9,99.2 139.9,98.4 142.2,98.6 C133.8,88.0 127.5,74.4 143.8,58.0 C148.5,53.4 154.0,51.2 159.7,51.0 C160.3,49.4 163.2,43.6 171.4,40.1 C171.4,40.1 176.1,42.5 178.8,56.2 C183.1,58.6 187.2,61.8 190.9,65.4 C194.5,69.0 197.7,73.2 200.1,77.6 C213.8,80.2 216.3,84.9 216.3,84.9 C212.7,93.1 206.9,96.0 205.4,96.6 C205.1,102.4 203.0,107.8 198.3,112.5 C181.9,128.9 168.3,122.5 157.7,114.1 C157.9,116.9 156.7,120.9 152.7,124.9 L141.0,136.5 C139.8,137.7 141.6,141.9 141.8,141.8 Z" fill="currentColor" class="octo-body"/></svg></a><style>.github-corner:hover .octo-arm{animation:octocat-wave 560ms ease-in-out}@keyframes octocat-wave{0%,100%{transform:rotate(0)}20%,60%{transform:rotate(-25deg)}40%,80%{transform:rotate(10deg)}}@media (max-width:500px){.github-corner:hover .octo-arm{animation:none}.github-corner .octo-arm{animation:octocat-wave 560ms ease-in-out}}</style>
@@ -286,53 +294,254 @@
           <div id="content" class="content">
             
 
-  
-  
-  
-  <div class="post-block category">
+  <div id="posts" class="posts-expand">
+    
 
-    <div id="posts" class="posts-collapse">
-      <div class="collection-title">
-        <h1>PhpStorm<small>分类</small>
-        </h1>
-      </div>
+  
 
-      
-        
+  
+  
+  
 
   <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-    <header class="post-header">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="https://summerway.github.io/2018/05/03/Git工作流/">
 
-      <h2 class="post-title">
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="mapleSnow">
+      <meta itemprop="description" content>
+      <meta itemprop="image" content="http://markdown.zengtuo.net/avatar.png">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="Indian Summer">
+    </span>
+
+    
+      <header class="post-header">
+
         
-            <a class="post-title-link" href="/2018/05/08/PhpStorm 使用心得/" itemprop="url">
-              
-                <span itemprop="name">PhpStorm 使用心得</span>
-              
-            </a>
         
-      </h2>
+          <h1 class="post-title" itemprop="name headline">Git工作流</h1>
+        
 
-      <div class="post-meta">
-        <time class="post-time" itemprop="dateCreated" datetime="2018-05-08T08:19:54+08:00" content="2018-05-08">
-          05-08
-        </time>
-      </div>
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2018-05-03T03:25:24+08:00">
+                2018-05-03
+              </time>
+            
 
-    </header>
-  </article>
+            
 
+            
+          </span>
+
+          
+            <span class="post-category">
+            
+              <span class="post-meta-divider">|</span>
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-folder-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">分类于</span>
+              
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Coding/" itemprop="url" rel="index">
+                    <span itemprop="name">Coding</span>
+                  </a>
+                </span>
+
+                
+                
+                  ， 
+                
+              
+                <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+                  <a href="/categories/Coding/Git/" itemprop="url" rel="index">
+                    <span itemprop="name">Git</span>
+                  </a>
+                </span>
+
+                
+                
+              
+            </span>
+          
+
+          
+            
+              <span class="post-comments-count">
+                <span class="post-meta-divider">|</span>
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-comment-o"></i>
+                </span>
+                <a href="/2018/05/03/Git工作流/#comments" itemprop="discussionUrl">
+                  <span class="post-comments-count valine-comment-count" data-xid="/2018/05/03/Git工作流/" itemprop="commentCount"></span>
+                </a>
+              </span>
+            
+          
+
+          
+          
+
+          
+
+          
+            <div class="post-wordcount">
+              
+                
+                <span class="post-meta-item-icon">
+                  <i class="fa fa-file-word-o"></i>
+                </span>
+                
+                  <span class="post-meta-item-text">字数统计&#58;</span>
+                
+                <span title="字数统计">
+                  489
+                </span>
+              
+
+              
+
+              
+            </div>
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>GitFlow是Vincent Driessen提出的<a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noopener">A Successful Git Branching Model</a><br>流程图翻译如下<br><img src="http://markdown.zengtuo.net/1460782827245_7.png?imageMogr2/thumbnail/!70p" alt></p>
+<a id="more"></a>
+<p>#分支介绍<br><strong>主要分支</strong>:永久分支,生命周期与项目同步</p>
+<ul>
+<li><strong>master</strong>:永远处在production-ready状态,保存已发布的版本</li>
+<li><strong>develop</strong>:当前最新的工作状态</li>
+</ul>
+<p><strong>辅助分支</strong>: 临时性分支</p>
+<ul>
+<li><strong>feature</strong>:开发新功能或较大的功能改动，一般基于develop分支，完成后merge回develop分支</li>
+<li><strong>realease</strong>:准备发布版本，只完善当前版本，不加新功能。基于develop分支，完成后merge回develop和master(标记tag)</li>
+<li><strong>hotfix</strong>:有紧急bug需修复上线，赶不及下次release。基于最新master，完成后merge回develop和master(标记)</li>
+</ul>
+<p>#分支图解</p>
+<p>##初始分支<br>所有在master分支上的commit 应该tag<br><img src="http://markdown.zengtuo.net/1460782826567_4.png?imageMogr2/thumbnail/!70p" alt></p>
+<p>##feature分支<br>分支命名为feature/*,feature分支完成后，必须合并回develop, 合并完分支后一般会删点这个Feature分支，但是我们也可以保留<br><img src="http://markdown.zengtuo.net/1460782826570_6.png?imageMogr2/thumbnail/!70p" alt></p>
+<p>##release分支<br>分支命名为release/*,release分支基于develop分支创建，创建release分支后，可以进行测试，修改bug等。同时，其它开发人员可以基于开发新的Feature<br><img src="http://markdown.zengtuo.net/1460782826565_3.png?imageMogr2/thumbnail/!70p" alt></p>
+<p>##hotfix<br>分支名hotfix/*,修复线上出现的紧急bug<br><img src="quiver-image-url/FA159868DF4A416D391C6FD832851F9A.png =368x228" alt="1460782826567_5.png"></p>
+<p>#Git Flow代码示例</p>
+<h3 id="创建develop"><a href="#创建develop" class="headerlink" title="创建develop"></a>创建develop</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch develop</span><br><span class="line">git push -u origin develop</span><br></pre></td></tr></table></figure>
+<h3 id="开始新feature开发"><a href="#开始新feature开发" class="headerlink" title="开始新feature开发"></a>开始新feature开发</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b some-feature develop</span><br><span class="line"># Optionally, push branch to origin:</span><br><span class="line">git push -u origin some-feature    </span><br><span class="line"></span><br><span class="line"># 做一些改动    </span><br><span class="line">git status</span><br><span class="line">git add some-file</span><br><span class="line">git commit</span><br></pre></td></tr></table></figure>
+<h3 id="完成feature"><a href="#完成feature" class="headerlink" title="完成feature"></a>完成feature</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git pull origin develop</span><br><span class="line">git checkout develop</span><br><span class="line">git merge --no-ff some-feature</span><br><span class="line">git push origin develop</span><br><span class="line"></span><br><span class="line">git branch -d some-feature</span><br><span class="line"></span><br><span class="line"># If you pushed branch to origin:</span><br><span class="line">git push origin --delete some-feature</span><br></pre></td></tr></table></figure>
+<h3 id="开始relase"><a href="#开始relase" class="headerlink" title="开始relase"></a>开始relase</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b release-0.1.0 develop</span><br><span class="line"></span><br><span class="line"># Optional: Bump version number, commit</span><br><span class="line"># Prepare release, commit</span><br></pre></td></tr></table></figure>
+<h3 id="完成release"><a href="#完成release" class="headerlink" title="完成release"></a>完成release</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge --no-ff release-0.1.0</span><br><span class="line">git push</span><br><span class="line"></span><br><span class="line">git checkout develop</span><br><span class="line">git merge --no-ff release-0.1.0</span><br><span class="line">git push</span><br><span class="line"></span><br><span class="line">git branch -d release-0.1.0</span><br><span class="line"></span><br><span class="line"># If you pushed branch to origin:</span><br><span class="line">git push origin --delete release-0.1.0   </span><br><span class="line"></span><br><span class="line">git tag -a v0.1.0 master</span><br><span class="line">git push --tags</span><br></pre></td></tr></table></figure>
+<h3 id="开始hotfix"><a href="#开始hotfix" class="headerlink" title="开始hotfix"></a>开始hotfix</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b hotfix-0.1.1 master</span><br></pre></td></tr></table></figure>
+<h3 id="完成hotfix"><a href="#完成hotfix" class="headerlink" title="完成hotfix"></a>完成hotfix</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line">git checkout master</span><br><span class="line">git merge --no-ff hotfix-0.1.1</span><br><span class="line">git push</span><br><span class="line"></span><br><span class="line">git checkout develop</span><br><span class="line">git merge --no-ff hotfix-0.1.1</span><br><span class="line">git push</span><br><span class="line"></span><br><span class="line">git branch -d hotfix-0.1.1</span><br><span class="line"></span><br><span class="line">git tag -a v0.1.1 master</span><br><span class="line">git push --tags</span><br></pre></td></tr></table></figure>
+
+      
+    </div>
+    
+    
+    
+    
+    <div>
+      
+        
 
       
     </div>
 
+    
+
+    
+
+    
+
+    <div>
+      
+        <div>
+    
+        <div style="text-align:center;color: #ccc;font-size:14px;">-------------本文结束<i class="fa fa-paw"></i><!-- <i class="far fa-leaf-maple"></i> -->感谢您的阅读-------------</div>
+    
+</div>
+
+      
+    </div>
+
+    <footer class="post-footer">
+      
+        <div class="post-tags">
+          
+            <a href="/tags/git/" rel="tag"><i class="fa fa-tag"></i> git</a>
+          
+            <a href="/tags/gitFlow/" rel="tag"><i class="fa fa-tag"></i> gitFlow</a>
+          
+        </div>
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2018/05/04/Docker笔记/" rel="prev" title="Docker笔记">
+                Docker笔记 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
   </div>
   
   
   
+  </article>
 
-  
 
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
 
 
           </div>
@@ -340,6 +549,13 @@
 
 
           
+
+  
+    <div class="comments" id="comments">
+    </div>
+  
+
+
 
         </div>
         
@@ -360,8 +576,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -389,7 +614,7 @@
               
               <div class="site-state-item site-state-categories">
                 <a href="/categories/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">7</span>
                   <span class="site-state-item-name">分类</span>
                 </a>
               </div>
@@ -400,7 +625,7 @@
               
               <div class="site-state-item site-state-tags">
                 <a href="/tags/index.html">
-                  <span class="site-state-item-count">6</span>
+                  <span class="site-state-item-count">8</span>
                   <span class="site-state-item-name">标签</span>
                 </a>
               </div>
@@ -423,6 +648,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建develop"><span class="nav-number">1.</span> <span class="nav-text">创建develop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始新feature开发"><span class="nav-number">2.</span> <span class="nav-text">开始新feature开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完成feature"><span class="nav-number">3.</span> <span class="nav-text">完成feature</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始relase"><span class="nav-number">4.</span> <span class="nav-text">开始relase</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完成release"><span class="nav-number">5.</span> <span class="nav-text">完成release</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始hotfix"><span class="nav-number">6.</span> <span class="nav-text">开始hotfix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完成hotfix"><span class="nav-number">7.</span> <span class="nav-text">完成hotfix</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -470,7 +711,7 @@
 <span class="post-meta-divider">|</span>
 <div class="theme-info">
   <div class="powered-by">
-    <i class="fa fa-pencil"></i> <span class="post-count">博客全站共1.3k字</span>
+    <i class="fa fa-pencil"></i> <span class="post-count">博客全站共1.5k字</span>
   </div>
   
 </div>
@@ -571,6 +812,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 
