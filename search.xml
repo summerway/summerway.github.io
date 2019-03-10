@@ -14,21 +14,6 @@
       </tags>
   </entry>
   <entry>
-    <title><![CDATA[PhpStorm 使用心得]]></title>
-    <url>%2F2018%2F05%2F08%2FPhpStorm%20%E4%BD%BF%E7%94%A8%E5%BF%83%E5%BE%97%2F</url>
-    <content type="text"><![CDATA[常用快捷键 ⌘ + E 最近编辑的文件 ⌘ + ` 不同项目窗口切换 ⌘ + 9 查看git log ⌘ + P 查找文件 (改键) ⌘ + ⌥ + o 定位具体方法或者属性 ⌘ + ↑ 跳出navigation bar ⌘ + N 新建文件 ⌥ + ⌘ + L 代码一键美化 command + ctrl + g 多点编辑 使用FTP/SFTP功能配置 打开PhpStorm，打开一个本地项目。依次找到Tools—&gt;Deployment—&gt;Cofiguration，点击进入。 填写FTP/SFTP信息依次填入项目名称，主机地址，用户名，密码，项目的浏览器访问地址，然后点击Test connection测试是否连接成功。点击Mappings,配置项目本地地址，其他默认，注意远程地址那有个斜杠。点击OK。 查看远程项目文件依次找到Tools—&gt;Deployment—&gt;Browse Remote Host，点击进入。选择刚才创建的远程主机名称，即可查看远程文件。到此为止PhpStorm中FTP的配置工作已经完成。 常用操作 远程文件显示后面的日期点击一下右上角的菜单，选择Show Date即可。 下载/对比/上传文件]]></content>
-      <categories>
-        <category>Mac</category>
-        <category>软件</category>
-        <category>PhpStorm</category>
-      </categories>
-      <tags>
-        <tag>ftp</tag>
-        <tag>phpstorm</tag>
-        <tag>application</tag>
-      </tags>
-  </entry>
-  <entry>
     <title><![CDATA[Docker笔记]]></title>
     <url>%2F2018%2F05%2F04%2FDocker%E7%AC%94%E8%AE%B0%2F</url>
     <content type="text"><![CDATA[Docker常用指令和加速器Perfect docker基本命令容器相关操作123456789docker create # 创建一个容器但是不启动它docker run # 创建并启动一个容器docker stop # 停止容器运行，发送信号SIGTERMdocker start # 启动一个停止状态的容器docker restart # 重启一个容器docker rm # 删除一个容器docker kill # 发送信号给容器，默认SIGKILLdocker attach # 连接(进入)到一个正在运行的容器docker wait # 阻塞到一个容器，直到容器停止运行 获取容器相关信息12345678docker ps # 显示状态为运行（Up）的容器docker ps -a # 显示所有容器,包括运行中（Up）的和退出的(Exited)docker inspect # 深入容器内部获取容器所有信息docker logs # 查看容器的日志(stdout/stderr)docker events # 得到docker服务器的实时的事件docker port # 显示容器的端口映射docker top # 显示容器的进程信息docker diff # 显示容器文件系统的前后变化 导出容器123docker cp # 从容器里向外拷贝文件或目录docker add # 添加文件，比cp更强大，可以添加remote server上的文件docker export # 将容器整个文件系统导出为一个tar包，不带layers、tag等信息 执行1docker exec # 在容器里执行一个命令，可以执行bash进入交互式 镜像操作123456789docker images # 显示本地所有的镜像列表docker import # 从一个tar包创建一个镜像，往往和export结合使用docker build # 使用Dockerfile创建镜像（推荐）docker commit # 从容器创建镜像docker rmi # 删除一个镜像docker load # 从一个tar包创建一个镜像，和save配合使用docker save # 将一个镜像保存为一个tar包，带layers和tag信息docker history # 显示生成一个镜像的历史命令docker tag # 为镜像起一个别名 镜像仓库(registry)操作1234docker login # 登录到一个registrydocker search # 从registry仓库搜索镜像docker pull # 从仓库下载镜像到本地docker push # 将一个镜像push到registry仓库中 开发常用指令查询命令12345# 查询list of dependent child images docker inspect --format='&#123;&#123;.Id&#125;&#125; &#123;&#123;.Parent&#125;&#125;' \ $(docker images --filter since=&#123;$image&#125; --quiet)# 查询服务ipdocker inspect -f '&#123;&#123;.Name&#125;&#125; - &#123;&#123;range .NetworkSettings.Networks&#125;&#125;&#123;&#123;.IPAddress&#125;&#125; &#123;&#123;end&#125;&#125;' $(docker ps -aq) 清理命令12345678910# 杀死所有正在运行的容器docker kill $(docker ps -a -q)#删除所有已经停止的容器docker rm $(docker ps -a -q)#清除没有tag的镜像docker rmi $(docker images | grep "^&lt;none&gt;" | awk '&#123;print $3&#125;')#删除所有镜像docker rmi $(docker images -q)#若出现`image is referenced in multiple repositories`,镜像id相同，无法删除，加`f`参数，强制删除docker rm -f $(docker ps -a -q) mac下进入docker内部1screen ~/Library/Containers/com.docker.docker/Data/com.docker.driver.amd64-linux/tty docker加速器 阿里云 DaoCloud 灵雀 注册用户并且申请加速器，获得加速地址，右键点击桌面顶栏的docker图标，选择Preferences，在Daemon 标签（Docker 17.03 之前版本为 Advanced 标签）下的 Registry mirrors列表中加入加速加速镜像地址 尝试过阿里云和DaoCloud的两款加速器，感觉阿里云效果更好]]></content>
@@ -38,6 +23,19 @@
       </categories>
       <tags>
         <tag>docker</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title><![CDATA[Git工作流]]></title>
+    <url>%2F2018%2F05%2F03%2FGit%E5%B7%A5%E4%BD%9C%E6%B5%81%2F</url>
+    <content type="text"><![CDATA[GitFlow是Vincent Driessen提出的A Successful Git Branching Model流程图翻译如下 #分支介绍主要分支:永久分支,生命周期与项目同步 master:永远处在production-ready状态,保存已发布的版本 develop:当前最新的工作状态 辅助分支: 临时性分支 feature:开发新功能或较大的功能改动，一般基于develop分支，完成后merge回develop分支 realease:准备发布版本，只完善当前版本，不加新功能。基于develop分支，完成后merge回develop和master(标记tag) hotfix:有紧急bug需修复上线，赶不及下次release。基于最新master，完成后merge回develop和master(标记) #分支图解 ##初始分支所有在master分支上的commit 应该tag ##feature分支分支命名为feature/*,feature分支完成后，必须合并回develop, 合并完分支后一般会删点这个Feature分支，但是我们也可以保留 ##release分支分支命名为release/*,release分支基于develop分支创建，创建release分支后，可以进行测试，修改bug等。同时，其它开发人员可以基于开发新的Feature ##hotfix分支名hotfix/*,修复线上出现的紧急bug #Git Flow代码示例 创建develop12git branch developgit push -u origin develop 开始新feature开发12345678git checkout -b some-feature develop# Optionally, push branch to origin:git push -u origin some-feature # 做一些改动 git statusgit add some-filegit commit 完成feature123456789git pull origin developgit checkout developgit merge --no-ff some-featuregit push origin developgit branch -d some-feature# If you pushed branch to origin:git push origin --delete some-feature 开始relase1234git checkout -b release-0.1.0 develop# Optional: Bump version number, commit# Prepare release, commit 完成release123456789101112131415git checkout mastergit merge --no-ff release-0.1.0git pushgit checkout developgit merge --no-ff release-0.1.0git pushgit branch -d release-0.1.0# If you pushed branch to origin:git push origin --delete release-0.1.0 git tag -a v0.1.0 mastergit push --tags 开始hotfix1git checkout -b hotfix-0.1.1 master 完成hotfix123456789101112git checkout mastergit merge --no-ff hotfix-0.1.1git pushgit checkout developgit merge --no-ff hotfix-0.1.1git pushgit branch -d hotfix-0.1.1git tag -a v0.1.1 mastergit push --tags]]></content>
+      <categories>
+        <category>Coding</category>
+        <category>Git</category>
+      </categories>
+      <tags>
+        <tag>git</tag>
+        <tag>gitFlow</tag>
       </tags>
   </entry>
 </search>
