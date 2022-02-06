@@ -107,7 +107,7 @@
 <meta property="og:image" content="http://markdown.maplesnow.cn/1460782826570_6.png">
 <meta property="og:image" content="http://markdown.maplesnow.cn/1460782826565_3.png">
 <meta property="og:image" content="https://summerway.github.io/2018/05/03/Git工作流/quiver-image-url/FA159868DF4A416D391C6FD832851F9A.png%20=368x228">
-<meta property="og:updated_time" content="2020-02-17T07:05:33.280Z">
+<meta property="og:updated_time" content="2022-02-06T07:29:11.961Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="Git工作流">
 <meta name="twitter:description" content="GitFlow是Vincent Driessen提出的A Successful Git Branching Model流程图翻译如下">
@@ -412,7 +412,7 @@
                   <span class="post-meta-item-text">字数统计&#58;</span>
                 
                 <span title="字数统计">
-                  489
+                  488
                 </span>
               
 
@@ -437,8 +437,9 @@
       
 
       
-        <p>GitFlow是Vincent Driessen提出的<a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noopener">A Successful Git Branching Model</a><br>流程图翻译如下<br><img src="http://markdown.maplesnow.cn/1460782827245_7.png" alt><br><a id="more"></a></p>
-<p>#分支介绍<br><strong>主要分支</strong>:永久分支,生命周期与项目同步</p>
+        <p>GitFlow是Vincent Driessen提出的<a href="http://nvie.com/posts/a-successful-git-branching-model/" target="_blank" rel="noopener">A Successful Git Branching Model</a><br>流程图翻译如下<br><img src="http://markdown.maplesnow.cn/1460782827245_7.png" alt></p>
+<a id="more"></a>
+<h1 id="分支介绍"><a href="#分支介绍" class="headerlink" title="分支介绍"></a>分支介绍</h1><p><strong>主要分支</strong>:永久分支,生命周期与项目同步</p>
 <ul>
 <li><strong>master</strong>:永远处在production-ready状态,保存已发布的版本</li>
 <li><strong>develop</strong>:当前最新的工作状态</li>
@@ -449,13 +450,11 @@
 <li><strong>realease</strong>:准备发布版本，只完善当前版本，不加新功能。基于develop分支，完成后merge回develop和master(标记tag)</li>
 <li><strong>hotfix</strong>:有紧急bug需修复上线，赶不及下次release。基于最新master，完成后merge回develop和master(标记)</li>
 </ul>
-<p>#分支图解</p>
-<p>##初始分支<br>所有在master分支上的commit 应该tag<br><img src="http://markdown.maplesnow.cn/1460782826567_4.png" alt></p>
-<p>##feature分支<br>分支命名为feature/*,feature分支完成后，必须合并回develop, 合并完分支后一般会删点这个Feature分支，但是我们也可以保留<br><img src="http://markdown.maplesnow.cn/1460782826570_6.png" alt></p>
-<p>##release分支<br>分支命名为release/*,release分支基于develop分支创建，创建release分支后，可以进行测试，修改bug等。同时，其它开发人员可以基于开发新的Feature<br><img src="http://markdown.maplesnow.cn/1460782826565_3.png" alt></p>
-<p>##hotfix<br>分支名hotfix/*,修复线上出现的紧急bug<br><img src="quiver-image-url/FA159868DF4A416D391C6FD832851F9A.png =368x228" alt="1460782826567_5.png"></p>
-<p>#Git Flow代码示例</p>
-<h3 id="创建develop"><a href="#创建develop" class="headerlink" title="创建develop"></a>创建develop</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch develop</span><br><span class="line">git push -u origin develop</span><br></pre></td></tr></table></figure>
+<h1 id="分支图解"><a href="#分支图解" class="headerlink" title="分支图解"></a>分支图解</h1><h2 id="初始分支"><a href="#初始分支" class="headerlink" title="初始分支"></a>初始分支</h2><p>所有在master分支上的commit 应该tag<br><img src="http://markdown.maplesnow.cn/1460782826567_4.png" alt></p>
+<h2 id="feature分支"><a href="#feature分支" class="headerlink" title="feature分支"></a>feature分支</h2><p>分支命名为feature/*,feature分支完成后，必须合并回develop, 合并完分支后一般会删点这个Feature分支，但是我们也可以保留<br><img src="http://markdown.maplesnow.cn/1460782826570_6.png" alt></p>
+<h2 id="release分支"><a href="#release分支" class="headerlink" title="release分支"></a>release分支</h2><p>分支命名为release/*,release分支基于develop分支创建，创建release分支后，可以进行测试，修改bug等。同时，其它开发人员可以基于开发新的Feature<br><img src="http://markdown.maplesnow.cn/1460782826565_3.png" alt></p>
+<h2 id="hotfix"><a href="#hotfix" class="headerlink" title="hotfix"></a>hotfix</h2><p>分支名hotfix/*,修复线上出现的紧急bug<br><img src="quiver-image-url/FA159868DF4A416D391C6FD832851F9A.png =368x228" alt="1460782826567_5.png"></p>
+<h1 id="Git-Flow代码示例"><a href="#Git-Flow代码示例" class="headerlink" title="Git Flow代码示例"></a>Git Flow代码示例</h1><h3 id="创建develop"><a href="#创建develop" class="headerlink" title="创建develop"></a>创建develop</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">git branch develop</span><br><span class="line">git push -u origin develop</span><br></pre></td></tr></table></figure>
 <h3 id="开始新feature开发"><a href="#开始新feature开发" class="headerlink" title="开始新feature开发"></a>开始新feature开发</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b some-feature develop</span><br><span class="line"># Optionally, push branch to origin:</span><br><span class="line">git push -u origin some-feature    </span><br><span class="line"></span><br><span class="line"># 做一些改动    </span><br><span class="line">git status</span><br><span class="line">git add some-file</span><br><span class="line">git commit</span><br></pre></td></tr></table></figure>
 <h3 id="完成feature"><a href="#完成feature" class="headerlink" title="完成feature"></a>完成feature</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">git pull origin develop</span><br><span class="line">git checkout develop</span><br><span class="line">git merge --no-ff some-feature</span><br><span class="line">git push origin develop</span><br><span class="line"></span><br><span class="line">git branch -d some-feature</span><br><span class="line"></span><br><span class="line"># If you pushed branch to origin:</span><br><span class="line">git push origin --delete some-feature</span><br></pre></td></tr></table></figure>
 <h3 id="开始relase"><a href="#开始relase" class="headerlink" title="开始relase"></a>开始relase</h3><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">git checkout -b release-0.1.0 develop</span><br><span class="line"></span><br><span class="line"># Optional: Bump version number, commit</span><br><span class="line"># Prepare release, commit</span><br></pre></td></tr></table></figure>
@@ -655,7 +654,7 @@
             
 
             
-              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建develop"><span class="nav-number">1.</span> <span class="nav-text">创建develop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始新feature开发"><span class="nav-number">2.</span> <span class="nav-text">开始新feature开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完成feature"><span class="nav-number">3.</span> <span class="nav-text">完成feature</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始relase"><span class="nav-number">4.</span> <span class="nav-text">开始relase</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完成release"><span class="nav-number">5.</span> <span class="nav-text">完成release</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始hotfix"><span class="nav-number">6.</span> <span class="nav-text">开始hotfix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完成hotfix"><span class="nav-number">7.</span> <span class="nav-text">完成hotfix</span></a></li></ol></div>
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-1"><a class="nav-link" href="#分支介绍"><span class="nav-number">1.</span> <span class="nav-text">分支介绍</span></a></li><li class="nav-item nav-level-1"><a class="nav-link" href="#分支图解"><span class="nav-number">2.</span> <span class="nav-text">分支图解</span></a><ol class="nav-child"><li class="nav-item nav-level-2"><a class="nav-link" href="#初始分支"><span class="nav-number">2.1.</span> <span class="nav-text">初始分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#feature分支"><span class="nav-number">2.2.</span> <span class="nav-text">feature分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#release分支"><span class="nav-number">2.3.</span> <span class="nav-text">release分支</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#hotfix"><span class="nav-number">2.4.</span> <span class="nav-text">hotfix</span></a></li></ol></li><li class="nav-item nav-level-1"><a class="nav-link" href="#Git-Flow代码示例"><span class="nav-number">3.</span> <span class="nav-text">Git Flow代码示例</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#创建develop"><span class="nav-number">3.0.1.</span> <span class="nav-text">创建develop</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始新feature开发"><span class="nav-number">3.0.2.</span> <span class="nav-text">开始新feature开发</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完成feature"><span class="nav-number">3.0.3.</span> <span class="nav-text">完成feature</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始relase"><span class="nav-number">3.0.4.</span> <span class="nav-text">开始relase</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完成release"><span class="nav-number">3.0.5.</span> <span class="nav-text">完成release</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#开始hotfix"><span class="nav-number">3.0.6.</span> <span class="nav-text">开始hotfix</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#完成hotfix"><span class="nav-number">3.0.7.</span> <span class="nav-text">完成hotfix</span></a></li></ol></li></ol></div>
             
 
           </div>
@@ -708,7 +707,7 @@
 <span class="post-meta-divider">|</span>
 <div class="theme-info">
   <div class="powered-by">
-    <i class="fa fa-pencil"></i> <span class="post-count">博客全站共2.3k字</span>
+    <i class="fa fa-pencil"></i> <span class="post-count">博客全站共2.2k字</span>
   </div>
 </div>
 
